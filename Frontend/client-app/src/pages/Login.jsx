@@ -25,7 +25,7 @@ const Login = () => {
       localStorage.setItem('refresh_token', refresh);
 
       // Navigate to the dashboard or home page after successful login
-      navigate('/home');
+      navigate('/');
     } catch (err) {
       setError('Invalid username or password. Please try again.');
     }

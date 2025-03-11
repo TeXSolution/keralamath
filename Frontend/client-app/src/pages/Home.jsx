@@ -10,6 +10,8 @@ const Landing = () => {
         localStorage.removeItem('refresh_token');
         navigate('/');
     };
+   
+
     return (
         <div className="min-h-screen bg-gray-900">
             {/* Navigation */}
@@ -45,9 +47,9 @@ const Landing = () => {
                     </div>
                 </div>
             </nav>
-
+    
             {/* Hero Section */}
-            <div className="container mx-auto px-6 py-20 text-center">
+            <div className="container mx-auto px-6 py-5 text-center">
                 <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
                     Transform Your Learning Experience
                 </h1>
@@ -56,13 +58,46 @@ const Landing = () => {
                 </p>
                 <Link
                     to="/signup"
-                    className="inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+                    className="inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 mb-4"
                 >
                     Get Started <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
             </div>
-
-            {/* Features */}
+    
+            {/* Plus One and Plus Two Classes - Centered */}
+            <div className="container mx-auto px-6 py-20 flex justify-center space-x-12">
+                {/* Plus One Class Card */}
+                <div className="text-center">
+                    <div className="bg-green-600/10 p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                        <Award className="w-8 h-8 text-green-400" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-4">Plus One Class</h3>
+                    <p className="text-gray-300">Explore our Plus One curriculum and get ahead in your academics.</p>
+                    <Link
+                        to="/plusone"
+                        className="inline-block mt-4 px-6 py-2 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700"
+                    >
+                        Learn More
+                    </Link>
+                </div>
+    
+                {/* Plus Two Class Card */}
+                <div className="text-center">
+                    <div className="bg-purple-600/10 p-4 rounded-full w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                        <Award className="w-8 h-8 text-purple-400" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-4">Plus Two Class</h3>
+                    <p className="text-gray-300">Prepare for your future with our advanced Plus Two curriculum.</p>
+                    <Link
+                        to="/plustwo"
+                        className="inline-block mt-4 px-6 py-2 text-lg font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700"
+                    >
+                        Learn More
+                    </Link>
+                </div>
+            </div>
+    
+            {/* Other Features - Bottom */}
             <div className="container mx-auto px-6 py-20" id="features">
                 <div className="grid md:grid-cols-3 gap-12">
                     <div className="text-center">
@@ -90,6 +125,9 @@ const Landing = () => {
             </div>
         </div>
     );
+    
+
 }
+
 
 export default Landing;
