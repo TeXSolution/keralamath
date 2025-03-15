@@ -12,6 +12,8 @@ const Landing = () => {
     };
    
 
+    
+
     return (
         <div className="min-h-screen bg-gray-900">
             {/* Navigation */}
@@ -97,6 +99,11 @@ const Landing = () => {
                 </div>
             </div>
     
+
+
+
+
+
             {/* Other Features - Bottom */}
             <div className="container mx-auto px-6 py-20" id="features">
                 <div className="grid md:grid-cols-3 gap-12">
