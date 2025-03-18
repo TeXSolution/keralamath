@@ -15,6 +15,9 @@ const Sidebar = () => {
         { icon: Users, label: 'Users', path: '/admin-dashboard/users' },
         { icon: HelpCircle, label: 'Questions', path: '/admin-dashboard/questions' },
         {
+
+
+
             icon: LogOut,
             label: 'Logout',
             onClick: () => {
@@ -23,6 +26,7 @@ const Sidebar = () => {
                 localStorage.removeItem('access_token');
                 localStorage.removeItem('refresh_token');
                 navigate('/');
+
 
             }
         },
@@ -72,6 +76,7 @@ const Sidebar = () => {
                         )
                     ))}
                 </nav>
+
 
             </div>
         </div>

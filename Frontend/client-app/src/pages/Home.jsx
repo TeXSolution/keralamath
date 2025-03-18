@@ -17,39 +17,7 @@ const Landing = () => {
     return (
         <div className="min-h-screen bg-gray-900">
             <Navbar />
-            {/* Navigation */}
-            {/* <nav className="container mx-auto px-6 py-4">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                        <BookOpen className="w-8 h-8 text-blue-400" />
-                        <span className="text-2xl font-bold text-white">TexSolution</span>
-                    </div>
-                    <div className="hidden md:flex space-x-6">
-                        <a href="#features" className="text-gray-300 hover:text-white">Features</a>
-                        <a href="#about" className="text-gray-300 hover:text-white">About</a>
-                        <a href="#contact" className="text-gray-300 hover:text-white">Contact</a>
-                    </div>
-                    <div className="flex items-center space-x-4">
-                        {isLoggedIn ? (
-                            <button
-                                onClick={handleLogout}
-                                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"
-                            >
-                                Logout
-                            </button>
-                        ) : (
-                            <>
-                                <Link to="/login" className="text-gray-300 hover:text-white">
-                                    Login
-                                </Link>
-                                <Link to="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-                                    Sign Up
-                                </Link>
-                            </>
-                        )}
-                    </div>
-                </div>
-            </nav> */}
+           
 
             {/* Hero Section */}
             <div className="container mx-auto px-6 py-5 text-center">
@@ -59,12 +27,7 @@ const Landing = () => {
                 <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
                     Join thousands of students achieving their goals through our innovative learning platform.
                 </p>
-                <Link
-                    to="/signup"
-                    className="inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 mb-4"
-                >
-                    Get Started <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
+             
             </div>
 
             {/* Plus One and Plus Two Classes - Centered */}

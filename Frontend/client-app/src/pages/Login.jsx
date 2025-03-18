@@ -25,7 +25,7 @@ const Login = () => {
       localStorage.setItem('role', role);
 
       if (role === 'superadmin') {
-        navigate('/admin-dashboard');  // Navigate to admin dashboard
+        navigate('/admin-dashboard/dash');  // Navigate to admin dashboard
       } else {
         navigate('/');  // Navigate to home page
       }
