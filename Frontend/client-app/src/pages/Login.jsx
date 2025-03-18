@@ -18,14 +18,19 @@ const Login = () => {
         password,
       });
 
-      const { access, refresh } = response.data;
+      const { access, refresh ,role} = response.data;
 
-      // Store tokens in local storage
       localStorage.setItem('access_token', access);
       localStorage.setItem('refresh_token', refresh);
+      localStorage.setItem('role', role);
 
-      // Navigate to the dashboard or home page after successful login
-      navigate('/');
+      if (role === 'superadmin') {
+        navigate('/admin-dashboard');  // Navigate to admin dashboard
+      } else {
+        navigate('/');  // Navigate to home page
+      }
+
+       
     } catch (err) {
       setError('Invalid username or password. Please try again.');
     }

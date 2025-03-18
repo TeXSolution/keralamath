@@ -6,6 +6,13 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import ProtectedRoute from './Protections/ProtectedRoute'
 import PlusOnePage from './pages/PlusOnePage'
+import PlusOneKeralaSyllabusPage from './pages/plusone/PlusOneKeralaSyllabusPage'
+import PlusOneCBSEPage from './pages/plusone/PlusOneCBSEPage'
+import Dashboard from './pages/AdminPages/Dashboard'
+import Layout from './components/Admin side/Layout'
+import Users from './pages/AdminPages/Users'
+import Questions from './pages/AdminPages/Questions'
+ 
 
 function App() {
 
@@ -18,6 +25,17 @@ function App() {
 
         <Route path="/" element={ <ProtectedRoute> <Home />    </ProtectedRoute>      } />
         <Route path="/plusone" element={ <ProtectedRoute> <PlusOnePage />    </ProtectedRoute>      } />
+        <Route path="/plusone/kerala-syllabus" element={ <ProtectedRoute> <PlusOneKeralaSyllabusPage />    </ProtectedRoute>      } />
+        <Route path="/plusone/cbse" element={ <ProtectedRoute> <PlusOneCBSEPage />    </ProtectedRoute>      } />
+
+
+        <Route path="/admin-dashboard" element={<Layout />} >
+          <Route path="dash" element={<Dashboard />} />
+          <Route path="users" element={<Users />} />
+          <Route path="questions" element={<Questions />} />
+        
+        </Route>
+
       </Routes>
     </Router>
   )
