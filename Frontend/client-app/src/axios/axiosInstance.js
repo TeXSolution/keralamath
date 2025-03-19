@@ -17,6 +17,11 @@ axiosInstance.interceptors.request.use(
   }
 );
 
+
+
+
+
+
 axiosInstance.interceptors.response.use(
   (response) => response,
   async (error) => {
@@ -42,6 +47,11 @@ axiosInstance.interceptors.response.use(
         window.location.href = '/login';
       }
     }
+
+
+
+
+
 
     return Promise.reject(error);
   }
