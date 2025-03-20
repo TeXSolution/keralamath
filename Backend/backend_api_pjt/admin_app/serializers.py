@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Students
+from .models import *
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,3 +23,33 @@ class StudentsSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**user_data)
         student = Students.objects.create(user=user, **validated_data)
         return student
+    
+
+# Serializers
+class SubjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subject
+        fields = ['id', 'name', 'description']
+
+
+class ChapterSerializer(serializers.ModelSerializer):
+    subject = SubjectSerializer(read_only=True)
+    class Meta:
+        model = Chapter
+        fields = ['id', 'name', 'description', 'subject']
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    chapter = ChapterSerializer(read_only=True)
+    class Meta:
+        model = Question
+        fields = ['id', 'question_text', 'answer_text', 'order', 'chapter']
+
+
+class UserProgressSerializer(serializers.ModelSerializer):
+    user = serializers.StringRelatedField()
+    chapter = ChapterSerializer(read_only=True)
+
+    class Meta:
+        model = UserProgress
+        fields = ['user', 'chapter', 'last_completed_question']
