@@ -12,6 +12,7 @@ import Dashboard from './pages/AdminPages/Dashboard'
 import Layout from './components/Admin side/Layout'
 import Users from './pages/AdminPages/Users'
 import Questions from './pages/AdminPages/Questions'
+import PlusOneChapters from './pages/plusone/CBSE/PlusOneChapters'
  
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 
         <Route path="/" element={ <ProtectedRoute> <Home />    </ProtectedRoute>      } />
         <Route path="/plusone" element={ <ProtectedRoute> <PlusOnePage />    </ProtectedRoute>      } />
+        <Route path="/plusone/chapters" element={ <ProtectedRoute> <PlusOneChapters />    </ProtectedRoute>      } />
         <Route path="/plusone/kerala-syllabus" element={ <ProtectedRoute> <PlusOneKeralaSyllabusPage />    </ProtectedRoute>      } />
         <Route path="/plusone/cbse" element={ <ProtectedRoute> <PlusOneCBSEPage />    </ProtectedRoute>      } />
 

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Navbar from '../../components/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const PlusOneCBSEPage = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const navigate= useNavigate('')
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -23,11 +25,11 @@ const PlusOneCBSEPage = () => {
 
                     {isOpen && (
                         <div className="mt-4 space-y-2">
-                            <a href="#" className="block bg-blue-700 p-2 rounded hover:bg-blue-600">Chapter-wise Solutions</a>
-                            <a href="#" className="block bg-blue-700 p-2 rounded hover:bg-blue-600">Previous Year Question Papers</a>
-                            <a href="#" className="block bg-blue-700 p-2 rounded hover:bg-blue-600">Mock Tests</a>
-                            <a href="#" className="block bg-blue-700 p-2 rounded hover:bg-blue-600">Quizzes</a>
-                            <a href="#" className="block bg-blue-700 p-2 rounded hover:bg-blue-600">Performance Analytics</a>
+                            <a  onClick={()=>navigate('/plusone/chapters')} className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Chapter-wise Solutions</a>
+                            <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Previous Year Question Papers</a>
+                            <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Mock Tests</a>
+                            <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Quizzes</a>
+                            <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Performance Analytics</a>
                         </div>
                     )}
                 </div>
