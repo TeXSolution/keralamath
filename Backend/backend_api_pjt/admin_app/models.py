@@ -24,7 +24,7 @@ class ClassLevel(models.Model):
     level = models.CharField(max_length=20, choices=LEVEL_CHOICES, unique=True)
 
     def __str__(self):
-        return self.name
+        return self.level
 
 class Subject(models.Model):
     class_level = models.ForeignKey(ClassLevel, on_delete=models.CASCADE, related_name='subjects')
@@ -43,6 +43,9 @@ class Chapter(models.Model):
 
     def __str__(self):
         return f'{self.subject.name} - {self.name}'
+    
+    class Meta:
+        ordering = ['id']
 
 class Question(models.Model):
     chapter = models.ForeignKey(Chapter, on_delete=models.CASCADE, related_name='questions')

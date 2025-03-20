@@ -3,6 +3,8 @@ from .models import *
 # Register your models here.
 
 admin.site.register(Students)
+admin.site.register(Subject)
+
 admin.site.register(Chapter)
 admin.site.register(Question)
 admin.site.register(Option)

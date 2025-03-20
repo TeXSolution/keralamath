@@ -77,11 +77,30 @@ class AdminOnlyPermission(permissions.BasePermission):
         return request.user.is_authenticated and request.user.is_staff
 
 
+class ClassLevelViewSet(viewsets.ModelViewSet):
+    queryset = ClassLevel.objects.all()
+    serializer_class = ClassLevelSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def create(self, request, *args, **kwargs):
+        print("Received data:", request.data)  # Debug print statement
+        return super().create(request, *args, **kwargs)
+
+
+
+
+
 class SubjectViewSet(viewsets.ModelViewSet):
+    
     queryset = Subject.objects.all()
     serializer_class = SubjectSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
+
+    def create(self, request, *args, **kwargs):
+        print("Received data:", request.data)  # Debug print statement
+        return super().create(request, *args, **kwargs)
 
 
 class ChapterViewSet(viewsets.ModelViewSet):

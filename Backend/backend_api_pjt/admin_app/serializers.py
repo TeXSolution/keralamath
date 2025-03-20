@@ -25,11 +25,26 @@ class StudentsSerializer(serializers.ModelSerializer):
         return student
     
 
+class ClassLevelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ClassLevel
+        fields = ['id', 'level']
+
+
+
+
 # Serializers
+# class SubjectSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Subject
+#         fields = ['id', 'name', 'description']
+
 class SubjectSerializer(serializers.ModelSerializer):
+    class_level = serializers.PrimaryKeyRelatedField(queryset=ClassLevel.objects.all())
+
     class Meta:
         model = Subject
-        fields = ['id', 'name', 'description']
+        fields = ['id', 'name', 'description', 'class_level']
 
 
 class ChapterSerializer(serializers.ModelSerializer):
