@@ -13,6 +13,7 @@ import Layout from './components/Admin side/Layout'
 import Users from './pages/AdminPages/Users'
 import Questions from './pages/AdminPages/Questions'
 import PlusOneChapters from './pages/plusone/CBSE/PlusOneChapters'
+import SubjectForm from './pages/AdminPages/SubjectForm'
  
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="dash" element={<Dashboard />} />
           <Route path="users" element={<Users />} />
           <Route path="questions" element={<Questions />} />
+          <Route path="sub-form" element={<SubjectForm />} />
         
         </Route>
 
