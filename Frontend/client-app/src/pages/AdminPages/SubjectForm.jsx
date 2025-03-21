@@ -8,6 +8,9 @@ const Card = ({ children }) => (
     </div>
 );
 
+
+
+
 const Input = ({ placeholder, value, onChange }) => (
     <input
         className="p-2 bg-gray-700 text-white rounded-md w-full mb-2"
@@ -53,6 +56,9 @@ const SubjectForm = () => {
         }
     };
 
+
+
+    
     return (
         <div className="p-8 text-white min-h-screen flex items-center justify-center">
             <div className="bg-gray-800 rounded-2xl shadow-xl p-6 w-full max-w-md">
@@ -67,6 +73,14 @@ const SubjectForm = () => {
                         <option value="" disabled>Select Class Level</option>
                         {classLevels.map((level) => (
                             <option key={level.id} value={level.id}>{level.level}</option>
+
+
+
+
+
+
+
+                            
                         ))}
                     </select>
                 </div>
@@ -97,5 +111,8 @@ const SubjectForm = () => {
     );
     
 };
+
+
+
 
 export default SubjectForm;
