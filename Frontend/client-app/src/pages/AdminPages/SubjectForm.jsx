@@ -26,7 +26,6 @@ const SubjectForm = () => {
     const [classLevels, setClassLevels] = useState([]);
     const [className, setClassName] = useState('');
 
-    // Fetch class levels from backend
     useEffect(() => {
         const fetchClassLevels = async () => {
             try {
@@ -40,6 +39,8 @@ const SubjectForm = () => {
         };
         fetchClassLevels();
     }, []);
+
+ 
 
     const handleCreateSubject = async () => {
         try {
@@ -58,6 +59,7 @@ const SubjectForm = () => {
 
 
 
+
     
     return (
         <div className="p-8 text-white min-h-screen flex items-center justify-center">
@@ -73,14 +75,6 @@ const SubjectForm = () => {
                         <option value="" disabled>Select Class Level</option>
                         {classLevels.map((level) => (
                             <option key={level.id} value={level.id}>{level.level}</option>
-
-
-
-
-
-
-
-                            
                         ))}
                     </select>
                 </div>
@@ -111,6 +105,7 @@ const SubjectForm = () => {
     );
     
 };
+
 
 
 
