@@ -33,6 +33,15 @@ const QuestionViewer = () => {
                     All Questions ({questions.length})
                 </h2>
 
+                <div className="flex justify-end mb-4">
+                    <button
+                        onClick={() => navigate(`/admin-dashboard/add-question/${chapterId}`)}
+                        className="bg-yellow-500 text-black font-semibold px-4 py-2 rounded hover:bg-yellow-600 transition"
+                    >
+                        + Add Question
+                    </button>
+                </div>
+
                 {loading ? (
                     <p className="text-gray-400 text-center">Loading questions...</p>
                 ) : questions.length === 0 ? (
