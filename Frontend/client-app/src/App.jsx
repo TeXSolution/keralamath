@@ -14,6 +14,7 @@ import Users from './pages/AdminPages/Users'
 import Questions from './pages/AdminPages/Questions'
 import PlusOneChapters from './pages/plusone/CBSE/PlusOneChapters'
 import PlusOneChaptersKerala from './pages/plusone/kerala syllabus/PlusOneChapters'
+import QuestionListing from './pages/common/QuestionListing'
 import SubjectForm from './pages/AdminPages/SubjectForm'
 import SubjectList from './pages/AdminPages/SubjectsList'
 import ChapterList from './pages/AdminPages/ChaptersList'
@@ -37,6 +38,7 @@ function App() {
         <Route path="/plusone/chapters" element={ <ProtectedRoute> <PlusOneChapters />    </ProtectedRoute>      } />
         <Route path="/plusone/chapters/kerala-syllabus" element={ <ProtectedRoute> <PlusOneChaptersKerala />    </ProtectedRoute>      } />
         <Route path="/plusone/kerala-syllabus" element={ <ProtectedRoute> <PlusOneKeralaSyllabusPage />    </ProtectedRoute>      } />
+        <Route path="/question-listing" element={ <ProtectedRoute> <QuestionListing />    </ProtectedRoute>      } />
         <Route path="/plusone/cbse" element={ <ProtectedRoute> <PlusOneCBSEPage />    </ProtectedRoute>      } />
 
 

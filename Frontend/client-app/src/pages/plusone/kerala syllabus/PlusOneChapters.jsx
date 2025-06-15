@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Navbar from '../../../components/Navbar';
 import axiosInstance from '../../../axios/axiosInstance';
+import { useNavigate } from 'react-router-dom';
 
 const PlusOneChapters = () => {
     const [selectedChapter, setSelectedChapter] = useState(null);
@@ -9,10 +10,11 @@ const PlusOneChapters = () => {
     const [subjectList, setSubjectList] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const handleChapterClick = (chapter) => {
-        setSelectedChapter(chapter);
-        setShowLevels(true);
-    };
+    const navigate = useNavigate();
+
+const handleChapterClick = (subjectName) => {
+    navigate(`/question-listing`, { state: { subject: subjectName } });
+};
 
     const handleLevelClick = (level) => {
         console.log(`Selected ${level}`);
@@ -28,6 +30,8 @@ const PlusOneChapters = () => {
                     }
                 });
                 setSubjectList(response.data);
+                console.log(response.data);
+                
             } catch (error) {
                 console.error('Error fetching subjects:', error);
             } finally {
