@@ -26,7 +26,6 @@ const PlusOneKeralaSyllabusPage = () => {
                     {isOpen && (
                         <div className="mt-4 space-y-2">
                             <a onClick={()=> 
-                            // navigate('/plusone/chapters/kerala-syllabus')} 
                              navigate('/plusone/chapters/kerala-syllabus?level=PlusOne&syllabus=Kerala')}
                             className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Chapter-wise Solutions</a>
                             <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Previous Year Question Papers</a>
