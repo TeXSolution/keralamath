@@ -54,7 +54,7 @@ class SubjectSerializer(serializers.ModelSerializer):
 
 
 class ChapterSerializer(serializers.ModelSerializer):
-    subject = SubjectSerializer(read_only=True)
+    subject = serializers.PrimaryKeyRelatedField(queryset=Subject.objects.all())
     class Meta:
         model = Chapter
         fields = ['id', 'name', 'description', 'subject']

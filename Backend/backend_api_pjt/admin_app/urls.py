@@ -25,6 +25,10 @@ urlpatterns = [
 
 
 
+    path('api/chapters/<int:chapter_id>/questions/', ChapterQuestionsAPIView.as_view(), name='chapter-questions'),
+    path('api/chapters/create/', CreateChapterAPIView.as_view(), name='create-chapter'),
+    
+
 
 
     path('api/user-progress/', UserProgressViewSet.as_view({'get': 'list', 'post': 'create'}), name='user-progress-list'),

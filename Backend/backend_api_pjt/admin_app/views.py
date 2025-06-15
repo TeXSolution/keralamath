@@ -197,12 +197,35 @@ class UserProgressViewSet(viewsets.ModelViewSet):
 
 
 
+class ChapterQuestionsAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, AdminOnlyPermission]  # optional
+
+    def get(self, request, chapter_id):
+        chapter = get_object_or_404(Chapter, id=chapter_id)
+        questions = Question.objects.filter(chapter=chapter).order_by('order')
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 
 
 
+class CreateChapterAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, AdminOnlyPermission] 
 
+    def post(self, request):
+        subject_id = request.data.get('subject')
+        print(subject_id,'id')
+        if not subject_id:
+            return Response({'error': 'Subject ID is required'}, status=400)
+        
+        serializer = ChapterSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'message': 'Chapter created successfully', 'data': serializer.data}, status=201)
+        return Response(serializer.errors, status=400)
 
 
 
