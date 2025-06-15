@@ -81,16 +81,6 @@ class AdminOnlyPermission(permissions.BasePermission):
         return request.user.is_authenticated and request.user.is_staff
 
 
-# class ClassLevelViewSet(viewsets.ModelViewSet):
-#     queryset = ClassLevel.objects.all()
-#     serializer_class = ClassLevelSerializer
-#     authentication_classes = [JWTAuthentication]
-#     permission_classes = [IsAuthenticated]
-
-#     def create(self, request, *args, **kwargs):
-#         print("Received data:", request.data)  # Debug print statement
-#         return super().create(request, *args, **kwargs)
-
 
 
 
@@ -104,7 +94,7 @@ class ClassLevelAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        print("Received data:", request.data)  # Debug print
+        print("Received data:", request.data)   
         serializer = ClassLevelSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -112,17 +102,6 @@ class ClassLevelAPIView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-
-# class SubjectViewSet(viewsets.ModelViewSet):
-    
-#     queryset = Subject.objects.all()
-#     serializer_class = SubjectSerializer
-#     authentication_classes = [JWTAuthentication]
-#     permission_classes = [IsAuthenticated, AdminOnlyPermission]
-
-#     def create(self, request, *args, **kwargs):
-#         print("Received data:", request.data)  # Debug print statement
-#         return super().create(request, *args, **kwargs)
 
 
 
@@ -157,11 +136,6 @@ class SubjectAPIView(APIView):
 
     
 
-# class ChapterViewSet(viewsets.ModelViewSet):
-#     queryset = Chapter.objects.all()
-#     serializer_class = ChapterSerializer
-#     authentication_classes = [JWTAuthentication]
-#     permission_classes = [IsAuthenticated, AdminOnlyPermission]
 
 
 class SubjectChaptersAPIView(APIView):
@@ -199,7 +173,7 @@ class UserProgressViewSet(viewsets.ModelViewSet):
 
 class ChapterQuestionsAPIView(APIView):
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated, AdminOnlyPermission]  # optional
+    permission_classes = [IsAuthenticated, AdminOnlyPermission]  
 
     def get(self, request, chapter_id):
         chapter = get_object_or_404(Chapter, id=chapter_id)
@@ -234,12 +208,12 @@ class QuestionCreateAPIView(APIView):
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
 
     def post(self, request):
-        print('working')  # for debug
+        print('working')   
         print('Received data:', request.data) 
         serializer = QuestionSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        print(serializer.errors)  # log errors for debugging
+        print(serializer.errors)   
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 

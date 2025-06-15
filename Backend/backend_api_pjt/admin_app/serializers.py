@@ -33,15 +33,7 @@ class ClassLevelSerializer(serializers.ModelSerializer):
 
 
 
-
-# Serializers
-# class SubjectSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Subject
-#         fields = ['id', 'name', 'description']
-
-
-
+ 
 
 
 
@@ -61,12 +53,7 @@ class ChapterSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description', 'subject']
 
 
-# class QuestionSerializer(serializers.ModelSerializer):
-#     chapter = ChapterSerializer(read_only=True)
-#     class Meta:
-#         model = Question
-#         fields = ['id', 'question_text', 'answer_text', 'order', 'chapter']
-
+ 
 
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
