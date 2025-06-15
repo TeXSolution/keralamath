@@ -18,6 +18,7 @@ import SubjectList from './pages/AdminPages/SubjectsList'
 import ChapterList from './pages/AdminPages/ChaptersList'
 import QuestionViewer from './pages/AdminPages/QuestionViewer'
 import QuestionDetail from './pages/AdminPages/QuestionDetail'
+import AddChapter from './pages/AdminPages/form/AddChapter'
  
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path="chapters-list/:subjectId/" element={<ChapterList />} />
           <Route path="question-view/:chapterId/" element={<QuestionViewer />} />
           <Route path="question-details/:questionId/" element={<QuestionDetail />} />
+          <Route path="add-chapter/:subjectId/" element={<AddChapter />} />
         
         </Route>
 
