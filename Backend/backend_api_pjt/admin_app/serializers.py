@@ -39,12 +39,18 @@ class ClassLevelSerializer(serializers.ModelSerializer):
 #         model = Subject
 #         fields = ['id', 'name', 'description']
 
+
+
+
+
+
 class SubjectSerializer(serializers.ModelSerializer):
     class_level = serializers.PrimaryKeyRelatedField(queryset=ClassLevel.objects.all())
+    class_level_name = serializers.CharField(source='class_level.level', read_only=True)
 
     class Meta:
         model = Subject
-        fields = ['id', 'name', 'description', 'class_level']
+        fields = ['id', 'name', 'description', 'class_level','class_level_name']
 
 
 class ChapterSerializer(serializers.ModelSerializer):

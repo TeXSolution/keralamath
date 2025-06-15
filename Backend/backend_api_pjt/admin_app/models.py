@@ -79,3 +79,14 @@ class UserProgress(models.Model):
 
     def __str__(self):
         return f'{self.user.username} - {self.chapter.name} - Last: {self.last_completed_question}'
+    
+
+
+
+
+
+
+
+
+
+    
