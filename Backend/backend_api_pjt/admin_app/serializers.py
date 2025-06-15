@@ -28,7 +28,8 @@ class StudentsSerializer(serializers.ModelSerializer):
 class ClassLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClassLevel
-        fields = ['id', 'level']
+        # fields = ['id', 'level']
+        fields = ['id', 'level', 'syllabus']
 
 
 

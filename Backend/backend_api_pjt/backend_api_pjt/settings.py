@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'admin_app',
     'rest_framework',
     'corsheaders',
+    'user_app'
+    
 
 ]
 CORS_ALLOW_ALL_ORIGINS = True

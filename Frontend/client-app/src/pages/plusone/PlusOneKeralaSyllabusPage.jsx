@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Navbar from '../../components/Navbar';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const PlusOneKeralaSyllabusPage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +9,7 @@ const PlusOneKeralaSyllabusPage = () => {
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
+    const navigate= useNavigate('')
 
     return (
         <div className="min-h-screen bg-gray-900 text-white">
@@ -23,7 +25,10 @@ const PlusOneKeralaSyllabusPage = () => {
 
                     {isOpen && (
                         <div className="mt-4 space-y-2">
-                            <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Chapter-wise Solutions</a>
+                            <a onClick={()=> 
+                            // navigate('/plusone/chapters/kerala-syllabus')} 
+                             navigate('/plusone/chapters/kerala-syllabus?level=PlusOne&syllabus=Kerala')}
+                            className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Chapter-wise Solutions</a>
                             <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Previous Year Question Papers</a>
                             <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Mock Tests</a>
                             <a href="#" className="block bg-gray-700 p-3 rounded hover:bg-gray-600 transition">Quizzes</a>

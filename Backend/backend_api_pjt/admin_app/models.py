@@ -16,15 +16,36 @@ class Students(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 
+# class ClassLevel(models.Model):
+#     LEVEL_CHOICES = [
+#         ('PlusOne', 'Plus One'),
+#         ('PlusTwo', 'Plus Two'),
+#     ]
+#     level = models.CharField(max_length=20, choices=LEVEL_CHOICES, unique=True)
+
+#     def __str__(self):
+#         return self.level
+
+
 class ClassLevel(models.Model):
     LEVEL_CHOICES = [
         ('PlusOne', 'Plus One'),
         ('PlusTwo', 'Plus Two'),
     ]
-    level = models.CharField(max_length=20, choices=LEVEL_CHOICES, unique=True)
+
+    SYLLABUS_CHOICES = [
+        ('Kerala', 'Kerala Syllabus'),
+        ('CBSE', 'CBSE Syllabus'),
+    ]
+
+    level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
+    syllabus = models.CharField(max_length=20, choices=SYLLABUS_CHOICES)
+
+    class Meta:
+        unique_together = ('level', 'syllabus')  # So same level can't repeat with same syllabus
 
     def __str__(self):
-        return self.level
+        return f"{self.level} - {self.syllabus}"
 
 class Subject(models.Model):
     class_level = models.ForeignKey(ClassLevel, on_delete=models.CASCADE, related_name='subjects')
