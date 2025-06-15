@@ -15,6 +15,8 @@ const Sidebar = () => {
         { icon: Users, label: 'Users', path: '/admin-dashboard/users' },
         { icon: HelpCircle, label: 'Questions', path: '/admin-dashboard/questions' },
         { icon: HelpCircle, label: 'Add subect', path: '/admin-dashboard/sub-form' },
+        { icon: HelpCircle, label: 'subjects list', path: '/admin-dashboard/sub-list' },
+        // { icon: HelpCircle, label: 'subjects list', path: '/admin-dashboard/chapters-list/:subjectId/' },
         {
 
 
