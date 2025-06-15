@@ -6,7 +6,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status,permissions
 from admin_app.models import *
-from .serializers import SubjectSerializer
+from .serializers import *
+from django.shortcuts import get_object_or_404
 
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
@@ -31,4 +32,38 @@ class SubjectListByClassAndSyllabus(APIView):
 
         subjects = Subject.objects.filter(class_level=class_level)
         serializer = SubjectSerializer(subjects, many=True)
+        print(serializer.data)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    
+
+
+
+
+
+class QuestionListByChapter(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    def get(self, request):
+        print('question listing is working')
+        chapter_id = request.query_params.get('chapter_id')
+
+        if not chapter_id:
+            return Response({'error': 'chapter_id is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        chapter = get_object_or_404(Chapter, id=chapter_id)
+
+        questions = chapter.questions.all().order_by('order')
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+
+class ChapterListBySubject(APIView):
+    def get(self, request):
+        subject_name = request.query_params.get('subject')
+        subject = get_object_or_404(Subject, name=subject_name)
+        chapters = Chapter.objects.filter(subject=subject)
+        serializer = ChapterSerializer(chapters, many=True)
+        return Response(serializer.data)
+
+
