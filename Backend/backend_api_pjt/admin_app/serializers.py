@@ -60,12 +60,17 @@ class ChapterSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'description', 'subject']
 
 
+# class QuestionSerializer(serializers.ModelSerializer):
+#     chapter = ChapterSerializer(read_only=True)
+#     class Meta:
+#         model = Question
+#         fields = ['id', 'question_text', 'answer_text', 'order', 'chapter']
+
+
 class QuestionSerializer(serializers.ModelSerializer):
-    chapter = ChapterSerializer(read_only=True)
     class Meta:
         model = Question
         fields = ['id', 'question_text', 'answer_text', 'order', 'chapter']
-
 
 class UserProgressSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField()
