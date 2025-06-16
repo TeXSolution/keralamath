@@ -11,6 +11,8 @@ from django.shortcuts import get_object_or_404
 
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
+
+# SUBJECT LISTING
 class SubjectListByClassAndSyllabus(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -37,6 +39,7 @@ class SubjectListByClassAndSyllabus(APIView):
     
 
 
+# QUSTIONS LISING
 class QuestionListByChapter(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
