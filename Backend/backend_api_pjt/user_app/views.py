@@ -59,6 +59,8 @@ class QuestionListByChapter(APIView):
 
 
 class ChapterListBySubject(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
     def get(self, request):
         subject_name = request.query_params.get('subject')
         subject = get_object_or_404(Subject, name=subject_name)
