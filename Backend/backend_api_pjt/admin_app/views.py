@@ -36,6 +36,7 @@ class RegisterStudentAPIView(APIView):
     
 
 
+# LOGIN VIEW
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
         username = request.data.get('username')
@@ -62,6 +63,7 @@ class LoginView(APIView):
 
 
 
+# LISTING STUDENTS
 class ListStudentsAPIView(APIView):
     permission_classes = [IsAdminUser]   
 
