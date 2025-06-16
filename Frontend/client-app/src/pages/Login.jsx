@@ -25,9 +25,9 @@ const Login = () => {
       localStorage.setItem('role', role);
 
       if (role === 'superadmin') {
-        navigate('/admin-dashboard/dash');  // Navigate to admin dashboard
+        navigate('/admin-dashboard/dash');   
       } else {
-        navigate('/');  // Navigate to home page
+        navigate('/');  
       }
 
        
@@ -96,6 +96,8 @@ const Login = () => {
             </div>
           </div>
 
+
+        {/* BUTTONS  */}
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <input
