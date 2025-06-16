@@ -38,7 +38,7 @@ const QuestionListing = () => {
                 params: { chapter_id: chapterId }
             });
             setQuestions(res.data);
-            setExpandedIndex(0); // always start from first
+            setExpandedIndex(0);  
         } catch (err) {
             console.error('Error fetching questions:', err);
         }

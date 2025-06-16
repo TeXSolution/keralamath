@@ -37,7 +37,6 @@ const PlusOneChapters = () => {
 
     const handleLevelClick = (level) => {
         console.log(`Selected ${level}`);
-        // Navigate to the next component or perform actions based on level
     };
 
     return (
