@@ -17,8 +17,6 @@ const Landing = () => {
     return (
         <div className="min-h-screen bg-gray-900">
             <Navbar />
-           
-
             {/* Hero Section */}
             <div className="container mx-auto px-6 py-5 text-center">
                 <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
@@ -29,6 +27,7 @@ const Landing = () => {
                 </p>
              
             </div>
+
 
             {/* Plus One and Plus Two Classes - Centered */}
             <div className="container mx-auto px-6 py-20 flex justify-center space-x-12">
@@ -78,10 +77,6 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-
-
-
-
 
 
 
