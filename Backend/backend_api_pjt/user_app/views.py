@@ -37,9 +37,6 @@ class SubjectListByClassAndSyllabus(APIView):
     
 
 
-
-
-
 class QuestionListByChapter(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
