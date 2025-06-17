@@ -137,7 +137,6 @@ class SubjectAPIView(APIView):
     
 
 
-
 class SubjectChaptersAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
@@ -203,12 +202,14 @@ class CreateChapterAPIView(APIView):
 
 
 
+
+
+
 class QuestionCreateAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
 
     def post(self, request):
-        print('working')   
         print('Received data:', request.data) 
         serializer = QuestionSerializer(data=request.data)
         if serializer.is_valid():
