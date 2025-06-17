@@ -71,7 +71,6 @@ const QuestionListing = () => {
                         ))}
                     </div>
                 )}
-
                 {selectedChapterId && (
                     <div className="mt-8 space-y-4">
                         {questions.length === 0 ? (
@@ -85,7 +84,6 @@ const QuestionListing = () => {
                                         Answer: {questions[expandedIndex].answer_text}
                                     </p>
                                 </div>
-
                                 <div className="text-center">
                                     <button
                                         onClick={handleNext}
@@ -103,5 +101,10 @@ const QuestionListing = () => {
         </div>
     );
 };
+
+
+
+
+
 
 export default QuestionListing;
