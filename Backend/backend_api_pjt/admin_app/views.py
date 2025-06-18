@@ -202,9 +202,6 @@ class CreateChapterAPIView(APIView):
 
 
 
-
-
-
 class QuestionCreateAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
