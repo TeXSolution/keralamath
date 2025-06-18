@@ -201,7 +201,7 @@ class CreateChapterAPIView(APIView):
         return Response(serializer.errors, status=400)
 
 
-
+# QUESTION CREATING API
 class QuestionCreateAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
