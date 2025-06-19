@@ -176,8 +176,7 @@ class ChapterQuestionsAPIView(APIView):
 
     def get(self, request, chapter_id):
         chapter = get_object_or_404(Chapter, id=chapter_id)
-        print(sample,'sample')
-
+        # print(sample,'sample')
         
         questions = Question.objects.filter(chapter=chapter).order_by('order')
         serializer = QuestionSerializer(questions, many=True)
