@@ -42,6 +42,7 @@ function App() {
         <Route path="/plusone/cbse" element={ <ProtectedRoute> <PlusOneCBSEPage />    </ProtectedRoute>      } />
 
 
+        {/*  --------------- ADMIN SIDE --------------*/}
         <Route path="/admin-dashboard" element={<Layout />} >
           <Route path="dash" element={<Dashboard />} />
           <Route path="users" element={<Users />} />
@@ -55,6 +56,8 @@ function App() {
           <Route path="add-question/:chapterId/" element={<AddQuestionForm />} />
         
         </Route>
+
+        {/* ------------- END -------------- */}
 
       </Routes>
     </Router>
