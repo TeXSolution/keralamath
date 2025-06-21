@@ -12,12 +12,6 @@ const Login = () => {
 
 
 
-
-
-// working 
-
-
-
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
