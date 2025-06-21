@@ -9,6 +9,11 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+
+
+
+
+  // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
 
