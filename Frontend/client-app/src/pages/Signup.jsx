@@ -180,7 +180,9 @@ const Signup = () => {
                 placeholder="Email address"
               />
             </div>
-            {/* Password */}
+
+
+            
             <div>
               <label htmlFor="password" className="sr-only">
                 Password
