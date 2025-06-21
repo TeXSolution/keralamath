@@ -63,6 +63,7 @@ class QuestionListByChapter(APIView):
 
 
 
+
 class ChapterListBySubject(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -72,5 +73,9 @@ class ChapterListBySubject(APIView):
         chapters = Chapter.objects.filter(subject=subject)
         serializer = ChapterSerializer(chapters, many=True)
         return Response(serializer.data)
+
+
+
+
 
 
