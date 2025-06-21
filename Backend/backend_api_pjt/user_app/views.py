@@ -64,6 +64,7 @@ class QuestionListByChapter(APIView):
 
 
 
+# CHAPTER LIST API
 class ChapterListBySubject(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
