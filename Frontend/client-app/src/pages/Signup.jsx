@@ -165,6 +165,9 @@ const Signup = () => {
               />
             </div>
             {/* Email */}
+
+
+            
             <div>
               <label htmlFor="email" className="sr-only">
                 Email address
@@ -182,7 +185,7 @@ const Signup = () => {
             </div>
 
 
-            
+
             <div>
               <label htmlFor="password" className="sr-only">
                 Password
