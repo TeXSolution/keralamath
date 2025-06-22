@@ -30,7 +30,6 @@ const handleChapterClick = (subjectName) => {
                     }
                 });
                 setSubjectList(response.data);
-                console.log(response.data);
                 
             } catch (error) {
                 console.error('Error fetching subjects:', error);
