@@ -68,7 +68,6 @@ class ListStudentsAPIView(APIView):
     permission_classes = [IsAdminUser]   
 
     def get(self, request, *args, **kwargs):
-        print('get is working')
         students = Students.objects.all()
         serializer = StudentsSerializer(students, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -94,7 +93,6 @@ class ClassLevelAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        print("Received data:", request.data)   
         serializer = ClassLevelSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -124,7 +122,6 @@ class SubjectAPIView(APIView):
         serializer = SubjectSerializer(data=request.data)
         
         if serializer.is_valid():
-            print('serialiser is working')
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
