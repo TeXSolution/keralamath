@@ -144,6 +144,7 @@ class SubjectChaptersAPIView(APIView):
 
     def get(self, request, subject_id):
         print(subject_id,'id')
+        print(request.user,'user')
         subject = get_object_or_404(Subject, id=subject_id)
         chapters = Chapter.objects.filter(subject=subject)
         serializer = ChapterSerializer(chapters, many=True)
@@ -152,7 +153,7 @@ class SubjectChaptersAPIView(APIView):
 
 
 
-
+# QUESTION LISTING AND CREATING API
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
