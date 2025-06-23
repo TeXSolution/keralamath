@@ -40,10 +40,6 @@ class SubjectListByClassAndSyllabus(APIView):
 
 
 
-
-
-
-
 # QUSTIONS LISING
 class QuestionListByChapter(APIView):
     authentication_classes = [JWTAuthentication]
@@ -74,9 +70,5 @@ class ChapterListBySubject(APIView):
         chapters = Chapter.objects.filter(subject=subject)
         serializer = ChapterSerializer(chapters, many=True)
         return Response(serializer.data)
-
-
-
-
 
 
