@@ -134,7 +134,7 @@ class SubjectAPIView(APIView):
 
     
 
-
+# SUBJECT LISTING API
 class SubjectChaptersAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
