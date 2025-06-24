@@ -105,6 +105,7 @@ class ClassLevelAPIView(APIView):
 
 
 
+# SUBJECT CREATING AND GET API
 class SubjectAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
