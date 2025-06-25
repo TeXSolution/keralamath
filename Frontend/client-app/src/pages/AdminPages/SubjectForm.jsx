@@ -31,10 +31,8 @@ const SubjectForm = () => {
         fetchData();
     }, []);
 
-    // Extract unique syllabus values from classLevels
     const syllabusOptions = [...new Set(classLevels.map(item => item.syllabus))];
 
-    // Filter classes matching selected syllabus
     const filteredClassLevels = classLevels.filter(
         (cls) => cls.syllabus.trim().toLowerCase() === selectedSyllabus.trim().toLowerCase()
     );
