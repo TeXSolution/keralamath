@@ -31,7 +31,6 @@ const QuestionDetail = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        // For question_text, strip trailing ?
         const cleanValue = name === 'question_text' ? value.replace(/\?+$/, '') : value;
         setEditedQuestion({ ...editedQuestion, [name]: cleanValue });
     };
