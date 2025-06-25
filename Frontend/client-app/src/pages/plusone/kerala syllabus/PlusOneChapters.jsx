@@ -41,6 +41,10 @@ const handleChapterClick = (subjectName) => {
         fetchSubjects();
     }, []);
 
+
+
+
+    
     return (
         <div className="min-h-screen bg-black text-white">
             <Navbar />
