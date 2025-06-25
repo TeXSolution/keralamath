@@ -159,6 +159,7 @@ class QuestionViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
 
 
+# USER PROGRES VIEW
 class UserProgressViewSet(viewsets.ModelViewSet):
     queryset = UserProgress.objects.all()
     serializer_class = UserProgressSerializer
