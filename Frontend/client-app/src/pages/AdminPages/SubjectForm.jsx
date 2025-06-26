@@ -64,8 +64,10 @@ const SubjectForm = () => {
             <div className="bg-gray-800 rounded-2xl shadow-xl p-6 w-full max-w-md">
                 <h2 className="text-3xl font-semibold mb-6 text-center">Add Subject</h2>
 
-                
+
+
                 {/* Syllabus Dropdown */}
+
                 <div className="mb-4">
                     <label className="block text-gray-300 mb-1">Select Syllabus</label>
                     <select
