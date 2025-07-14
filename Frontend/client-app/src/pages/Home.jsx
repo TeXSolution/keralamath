@@ -29,6 +29,7 @@ const Landing = () => {
             </div>
 
 
+
             {/* Plus One and Plus Two Classes - Centered */}
             <div className="container mx-auto px-6 py-20 flex justify-center space-x-12">
                 {/* Plus One Class Card */}
@@ -79,7 +80,6 @@ const Landing = () => {
             </div>
 
 
-
             <div className="container mx-auto px-6 py-20" id="features">
                 <div className="grid md:grid-cols-3 gap-12">
                     <div className="text-center">
@@ -108,9 +108,6 @@ const Landing = () => {
         </div>
     );
 
-
-
-    
 
 
 }
