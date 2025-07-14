@@ -80,7 +80,7 @@ const Landing = () => {
 
 
 
-            {/* Other Features - Bottom */}
+
             <div className="container mx-auto px-6 py-20" id="features">
                 <div className="grid md:grid-cols-3 gap-12">
                     <div className="text-center">
@@ -108,6 +108,8 @@ const Landing = () => {
             </div>
         </div>
     );
+
+
 
 
 }
