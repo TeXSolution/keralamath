@@ -47,7 +47,7 @@ const Landing = () => {
                         </Link>
                         <Link
                             to="/plusone/cbse"
-                            className="px-6 py-2 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700"
+                            className="px-6 py-2 text-lg font-medium text-white bg-green-600 "
                         >
                             CBSE
                         </Link>
