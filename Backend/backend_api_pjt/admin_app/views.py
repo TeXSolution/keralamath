@@ -170,11 +170,6 @@ class UserProgressViewSet(viewsets.ModelViewSet):
 
 
 
-    
-
-
-
-
 
 class ChapterQuestionsAPIView(APIView):
     authentication_classes = [JWTAuthentication]
