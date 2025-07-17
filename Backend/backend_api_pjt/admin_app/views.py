@@ -171,6 +171,7 @@ class UserProgressViewSet(viewsets.ModelViewSet):
 
 
 
+# CHAPTER  QUESTION VIEW
 class ChapterQuestionsAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]  
