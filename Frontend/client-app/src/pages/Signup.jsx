@@ -36,7 +36,7 @@ const Signup = () => {
     };
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000', userData);
+      const response = await axios.post('http://127.0.0.1:8000/register-student/', userData);
       setLoading(false);
       alert('Account created successfully');
       navigate('/')
