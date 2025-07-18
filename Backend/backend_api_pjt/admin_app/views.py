@@ -58,9 +58,6 @@ class LoginView(APIView):
                 status=status.HTTP_401_UNAUTHORIZED
             )
 
-
-
-
 # LISTING STUDENTS
 class ListStudentsAPIView(APIView):
     permission_classes = [IsAdminUser]   
