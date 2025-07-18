@@ -34,8 +34,6 @@ class RegisterStudentAPIView(APIView):
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-
-
 # LOGIN VIEW
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
