@@ -20,7 +20,15 @@ const PlusOnePage = () => {
                         <ChevronDown className={`w-6 h-6 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
                     </div>
 
-                    
+                    {isOpen && (
+                        <div className="mt-4 space-y-2">
+                            <a href="#" className="block bg-gray-700 p-2 rounded hover:bg-gray-600">Chapter-wise Solutions</a>
+                            <a href="#" className="block bg-gray-700 p-2 rounded hover:bg-gray-600">Previous Year Question Papers</a>
+                            <a href="#" className="block bg-gray-700 p-2 rounded hover:bg-gray-600">Mock Tests</a>
+                            <a href="#" className="block bg-gray-700 p-2 rounded hover:bg-gray-600">Quizzes</a>
+                            <a href="#" className="block bg-gray-700 p-2 rounded hover:bg-gray-600">Performance Analytics</a>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
