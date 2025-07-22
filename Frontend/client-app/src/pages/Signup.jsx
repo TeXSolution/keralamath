@@ -135,7 +135,8 @@ const Signup = () => {
               />
             </div>
 
-
+            
+            {/* Address */}
             <div>
               <label htmlFor="address" className="sr-only">
                 Address
