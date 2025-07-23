@@ -110,7 +110,7 @@ class SubjectAPIView(APIView):
         serializer = SubjectSerializer(subjects, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-     
+    #  POST
     def post(self, request):
         print("Received data:", request.data)
         serializer = SubjectSerializer(data=request.data)
