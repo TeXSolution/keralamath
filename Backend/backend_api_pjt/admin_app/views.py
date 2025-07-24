@@ -105,6 +105,7 @@ class SubjectAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
 
+    # GET
     def get(self, request):
         subjects = Subject.objects.all()
         serializer = SubjectSerializer(subjects, many=True)
