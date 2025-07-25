@@ -105,7 +105,7 @@ class SubjectAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
 
-    # GET
+    # GET  
     def get(self, request):
         subjects = Subject.objects.all()
         serializer = SubjectSerializer(subjects, many=True)
@@ -170,6 +170,7 @@ class ChapterQuestionsAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]  
 
+    # GET METHOD
     def get(self, request, chapter_id):
         chapter = get_object_or_404(Chapter, id=chapter_id)
         questions = Question.objects.filter(chapter=chapter).order_by('order')
