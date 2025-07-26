@@ -20,6 +20,8 @@ const ChapterQuestions = () => {
       }
     };
 
+
+    
     fetchQuestions();
   }, [chapterId]);
 
