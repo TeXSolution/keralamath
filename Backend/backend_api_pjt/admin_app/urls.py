@@ -38,4 +38,5 @@ urlpatterns = [
 
 
     path('api/subjects/<str:syllabus>/<str:level>/', FilteredSubjectListAPIView.as_view(), name='filtered-subjects'),
+    path('api/questions/<int:chapter_id>/', ChapterQuestionListAPIView.as_view())
 ]

@@ -241,3 +241,19 @@ class FilteredSubjectListAPIView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         except ClassLevel.DoesNotExist:
             return Response({"detail": "Class level not found."}, status=status.HTTP_404_NOT_FOUND)
+        
+
+
+
+
+
+class ChapterQuestionListAPIView(APIView):
+    
+    def get(self, request, chapter_id):
+        print('working hello')
+        questions = Question.objects.filter(chapter_id=chapter_id)
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data)
+
+
+
