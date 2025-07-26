@@ -11,6 +11,8 @@ const SubjectCard = ({ subject }) => (
 );
 
 const SubjectListFiltered = () => {
+    console.log('workign');
+    
     const { board, classLevel } = useParams();
     const [subjects, setSubjects] = useState([]);
     const [loading, setLoading] = useState(true);

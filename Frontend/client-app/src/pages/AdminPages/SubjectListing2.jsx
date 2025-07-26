@@ -11,7 +11,7 @@ const SubjectList = () => {
 
     const handleClassClick = (className) => {
         // Navigate to the new route with selected board and class
-        navigate(`/admin-dashboard/subjects-list/${selectedBoard}/${className}`);
+        navigate(`/admin-dashboard/sub-filter/${selectedBoard}/${className}`);
     };
 
     const classLevels = ['plusone', 'plustwo'];
