@@ -19,6 +19,7 @@ import SubjectForm from './pages/AdminPages/SubjectForm'
 import SubjectList from './pages/AdminPages/SubjectsList'
 import SubjectList2 from './pages/AdminPages/SubjectListing2'
 import SubjectListFiltered from './pages/AdminPages/SubjectListFiltered'
+import ChapterQuestions from './pages/AdminPages/ChapterQuestions'
 import ChapterList from './pages/AdminPages/ChaptersList'
 import QuestionViewer from './pages/AdminPages/QuestionViewer'
 import QuestionDetail from './pages/AdminPages/QuestionDetail'
@@ -53,6 +54,7 @@ function App() {
           <Route path="sub-list" element={<SubjectList />} />
           <Route path="sub-list2" element={<SubjectList2 />} />
           <Route path="sub-filter/:board/:classLevel" element={<SubjectListFiltered />} />
+          <Route path="chapter/:chapterId/questions" element={<ChapterQuestions />} />
 
           <Route path="chapters-list/:subjectId/" element={<ChapterList />} />
           <Route path="question-view/:chapterId/" element={<QuestionViewer />} />

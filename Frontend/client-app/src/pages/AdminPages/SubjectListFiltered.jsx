@@ -69,7 +69,7 @@ const SubjectListFiltered = () => {
     }, [board, classLevel]);
 
     const handleChapterClick = (chapterId) => {
-        navigate(`/chapter/${chapterId}`);
+        navigate(`/admin-dashboard/chapter/${chapterId}/questions`);
     };
 
     return (
