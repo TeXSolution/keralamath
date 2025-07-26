@@ -67,3 +67,12 @@ class UserProgressSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProgress
         fields = ['user', 'chapter', 'last_completed_question']
+
+
+
+class SubjectWithChaptersSerializer(serializers.ModelSerializer):
+    chapters = ChapterSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Subject
+        fields = ['id', 'name', 'description', 'chapters']

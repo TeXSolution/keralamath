@@ -35,4 +35,7 @@ urlpatterns = [
 
     path('api/user-progress/', UserProgressViewSet.as_view({'get': 'list', 'post': 'create'}), name='user-progress-list'),
     path('api/user-progress/<int:pk>/', UserProgressViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='user-progress-detail'),
+
+
+    path('api/subjects/<str:syllabus>/<str:level>/', FilteredSubjectListAPIView.as_view(), name='filtered-subjects'),
 ]

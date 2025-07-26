@@ -226,3 +226,18 @@ class QuestionCreateAPIView(APIView):
         print(serializer.errors)   
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+
+
+
+
+class FilteredSubjectListAPIView(APIView):
+    def get(self, request, syllabus, level):
+        print('Filtering working')
+        try:
+            class_level = ClassLevel.objects.get(syllabus__iexact=syllabus, level__iexact=level)
+            subjects = Subject.objects.filter(class_level=class_level)
+            serializer = SubjectWithChaptersSerializer(subjects, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except ClassLevel.DoesNotExist:
+            return Response({"detail": "Class level not found."}, status=status.HTTP_404_NOT_FOUND)
