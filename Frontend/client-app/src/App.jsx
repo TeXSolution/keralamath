@@ -17,6 +17,7 @@ import PlusOneChaptersKerala from './pages/plusone/kerala syllabus/PlusOneChapte
 import QuestionListing from './pages/common/QuestionListing'
 import SubjectForm from './pages/AdminPages/SubjectForm'
 import SubjectList from './pages/AdminPages/SubjectsList'
+import SubjectList2 from './pages/AdminPages/SubjectListing2'
 import ChapterList from './pages/AdminPages/ChaptersList'
 import QuestionViewer from './pages/AdminPages/QuestionViewer'
 import QuestionDetail from './pages/AdminPages/QuestionDetail'
@@ -49,6 +50,7 @@ function App() {
           <Route path="questions" element={<Questions />} />
           <Route path="sub-form" element={<SubjectForm />} />
           <Route path="sub-list" element={<SubjectList />} />
+          <Route path="sub-list2" element={<SubjectList2 />} />
           <Route path="chapters-list/:subjectId/" element={<ChapterList />} />
           <Route path="question-view/:chapterId/" element={<QuestionViewer />} />
           <Route path="question-details/:questionId/" element={<QuestionDetail />} />

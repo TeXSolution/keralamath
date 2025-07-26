@@ -112,7 +112,7 @@ const SubjectForm = () => {
                     />
                 </div>
 
-                {/* Subject Description */}
+                {/* Subject Description
                 <div className="mb-4">
                     <label className="block text-gray-300 mb-1">Subject Description</label>
                     <Input
@@ -120,7 +120,7 @@ const SubjectForm = () => {
                         value={subjectDescription}
                         onChange={(e) => setSubjectDescription(e.target.value)}
                     />
-                </div>
+                </div> */}
 
                 {/* Submit Button */}
                 <button
