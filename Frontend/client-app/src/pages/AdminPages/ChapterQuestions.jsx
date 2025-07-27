@@ -12,7 +12,7 @@ const ChapterQuestions = () => {
     const fetchQuestions = async () => {
       try {
         const res = await axiosInstance.get(`/questions/${chapterId}/`);
-        setQuestions(res.data || []); // fallback to empty array if null
+        setQuestions(res.data || []);  
         setLoading(false);
       } catch (err) {
         console.error('Error fetching questions', err);
@@ -22,7 +22,7 @@ const ChapterQuestions = () => {
 
 
      
-    
+
     fetchQuestions();
   }, [chapterId]);
 
