@@ -19,10 +19,7 @@ const ChapterQuestions = () => {
         setLoading(false);
       }
     };
-
-
-     
-
+ 
     fetchQuestions();
   }, [chapterId]);
 
@@ -39,7 +36,7 @@ const ChapterQuestions = () => {
         <p className="text-gray-500">Loading questions...</p>
       ) : questions.length > 0 ? (
         <ul className="space-y-3">
-          {questions.map((q, index) => (
+          {questions.map((q, ) => (
             <li key={q.id} className="p-4 bg-gray-100 rounded flex justify-between items-center">
               <div>
                 <strong className="text-gray-800">Q{index + 1}:</strong> {q.text}
