@@ -246,18 +246,5 @@ class FilteredSubjectListAPIView(APIView):
 
 
 
-# QUSTION LISTING
-class ChapterQuestionListAPIView(APIView):
-    
-    # GET METHOD
-    def get(self, request, chapter_id):
-        print('working hello')
-        questions = Question.objects.filter(chapter_id=chapter_id)
-        serializer = QuestionSerializer(questions, many=True)
-        return Response(serializer.data)
-
-
-
-
 
 
