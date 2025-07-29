@@ -230,7 +230,6 @@ class QuestionCreateAPIView(APIView):
 
 
 
-# FILTER SYLABUS AND CLASS
 class FilteredSubjectListAPIView(APIView):
     def get(self, request, syllabus, level):
         print('Filtering working')
