@@ -25,7 +25,6 @@ const Users = () => {
       // Call the backend API to update the status (if needed)
       await axiosInstance.patch(`students/${userId}/`, { status: newStatus });
 
-      // Update the status in the local state
       setUsers((prevUsers) =>
         prevUsers.map((user) =>
           user.id === userId ? { ...user, status: newStatus } : user
@@ -44,6 +43,8 @@ const Users = () => {
           Add User
         </button>
       </div>
+
+
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <table className="w-full">
           <thead className="bg-gray-100">
