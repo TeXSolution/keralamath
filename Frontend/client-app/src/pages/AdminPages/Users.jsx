@@ -15,6 +15,7 @@ const Users = () => {
       }
     };
 
+    fetchUsers();
   }, []);
 
   // Handle Block/Unblock Action
