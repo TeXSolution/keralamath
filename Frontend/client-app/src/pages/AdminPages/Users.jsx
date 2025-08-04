@@ -18,7 +18,8 @@ const Users = () => {
     fetchUsers();
   }, []);
 
-  // Handle Block/Unblock Action
+
+
   const handleStatusChange = async (userId, currentStatus) => {
     const newStatus = currentStatus === 'block' ? 'unblock' : 'block';
     try {
