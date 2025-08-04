@@ -46,8 +46,6 @@ const Users = () => {
           Add User
         </button>
       </div>
-
-
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <table className="w-full">
           <thead className="bg-gray-100">
