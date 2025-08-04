@@ -246,7 +246,6 @@ class FilteredSubjectListAPIView(APIView):
 
 
 
-# QUSTION LISTING
 class ChapterQuestionListAPIView(APIView):
     
     # GET METHOD
@@ -255,9 +254,4 @@ class ChapterQuestionListAPIView(APIView):
         questions = Question.objects.filter(chapter_id=chapter_id)
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data)
-
-
-
-
-
 
