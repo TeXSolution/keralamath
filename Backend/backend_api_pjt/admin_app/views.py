@@ -228,8 +228,6 @@ class QuestionCreateAPIView(APIView):
 
 
 
-
-
 # FILTER SYLABUS AND CLASS
 class FilteredSubjectListAPIView(APIView):
     def get(self, request, syllabus, level):
@@ -242,8 +240,6 @@ class FilteredSubjectListAPIView(APIView):
         except ClassLevel.DoesNotExist:
             return Response({"detail": "Class level not found."}, status=status.HTTP_404_NOT_FOUND)
         
-
-
 
 
 class ChapterQuestionListAPIView(APIView):
