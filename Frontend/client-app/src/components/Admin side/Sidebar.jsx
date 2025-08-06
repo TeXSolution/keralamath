@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { Users, HelpCircle, LayoutDashboard, Menu, LogOut } from 'lucide-react';
 
+// SIDEBAR
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate()
@@ -18,8 +19,6 @@ const Sidebar = () => {
         { icon: HelpCircle, label: 'subjects list new', path: '/admin-dashboard/sub-list2' },
         {
 
-
-
             icon: LogOut,
             label: 'Logout',
             onClick: () => {
@@ -28,7 +27,6 @@ const Sidebar = () => {
                 localStorage.removeItem('access_token');
                 localStorage.removeItem('refresh_token');
                 navigate('/');
-
 
             }
         },
@@ -50,7 +48,6 @@ const Sidebar = () => {
                     <LayoutDashboard size={24} />
                     <h1 className="text-xl font-bold">Admin Panel</h1>
                 </div>
-
                 <nav>
                     {menuItems.map((item) => (
                         item.label === 'Logout' ? (
@@ -78,8 +75,6 @@ const Sidebar = () => {
                         )
                     ))}
                 </nav>
-
-
             </div>
         </div>
     );
