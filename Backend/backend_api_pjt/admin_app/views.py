@@ -206,12 +206,6 @@ class CreateChapterAPIView(APIView):
             return Response({'message': 'Chapter created successfully', 'data': serializer.data}, status=201)
         return Response(serializer.errors, status=400)
 
-
-
-
-
-
-
 # QUESTION CREATING API
 class QuestionCreateAPIView(APIView):
     authentication_classes = [JWTAuthentication]
@@ -227,8 +221,6 @@ class QuestionCreateAPIView(APIView):
         print(serializer.errors)   
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-
 # FILTER SYLABUS AND CLASS
 class FilteredSubjectListAPIView(APIView):
     def get(self, request, syllabus, level):
@@ -242,7 +234,7 @@ class FilteredSubjectListAPIView(APIView):
             return Response({"detail": "Class level not found."}, status=status.HTTP_404_NOT_FOUND)
         
 
-
+# LISTING
 class ChapterQuestionListAPIView(APIView):
     
     # GET METHOD
@@ -251,4 +243,3 @@ class ChapterQuestionListAPIView(APIView):
         questions = Question.objects.filter(chapter_id=chapter_id)
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data)
-
