@@ -217,6 +217,7 @@ class QuestionCreateAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]
 
+    # POST METHOD
     def post(self, request):
         print('Received data:', request.data) 
         serializer = QuestionSerializer(data=request.data)
