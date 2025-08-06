@@ -2,6 +2,8 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
  
+
+// LAYOUT FUNCTION
 const Layout = () => {
   return (
     <div className="flex min-h-screen">
