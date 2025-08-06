@@ -21,7 +21,14 @@ const Sidebar = () => {
 
             icon: LogOut,
             label: 'Logout',
-           
+            onClick: () => {
+                console.log('Logging out...');
+
+                localStorage.removeItem('access_token');
+                localStorage.removeItem('refresh_token');
+                navigate('/');
+
+            }
         },
     ];
 
