@@ -4,5 +4,4 @@ from admin_app.models import ClassLevel
 class ClassLevelSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClassLevel
-        # fields = '__all__'
-        fields = 'any'
+        fields = '__all__'
