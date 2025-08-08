@@ -8,7 +8,8 @@ const ChapterList = () => {
     const { subjectId } = useParams();
     const navigate = useNavigate();
     const [chapters, setChapters] = useState([]);
-  
+    const [loading, setLoading] = useState(true);
+    const [subjectName, setSubjectName] = useState('');
 
     useEffect(() => {
         const fetchChapters = async () => {
