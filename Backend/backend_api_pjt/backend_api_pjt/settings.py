@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'admin_app',
     'rest_framework',
     'corsheaders',
-    'user_app'
+    'user_app',
+    'teachers_app',
     
 
 ]
