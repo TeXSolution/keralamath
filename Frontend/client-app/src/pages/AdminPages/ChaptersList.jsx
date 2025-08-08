@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import axiosInstance from '../../axios/axiosInstance';
 
 const ChapterCard = ({ chapter }) => (
     <Link to={`/admin-dashboard/question-view/${chapter.id}/`}>
@@ -11,6 +12,7 @@ const ChapterCard = ({ chapter }) => (
 );
 
 const ChapterList = () => {
+    const { subjectId } = useParams();
     const navigate = useNavigate();
     const [chapters, setChapters] = useState([]);
     const [loading, setLoading] = useState(true);
