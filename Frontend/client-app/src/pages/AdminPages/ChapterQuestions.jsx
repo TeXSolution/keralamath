@@ -35,23 +35,7 @@ const ChapterQuestions = () => {
       {loading ? (
         <p className="text-gray-500">Loading questions...</p>
       ) : questions.length > 0 ? (
-        <ul className="space-y-3">
-          {questions.map((q, index) => (
-            <li key={q.id} className="p-4 bg-gray-100 rounded flex justify-between items-center">
-              <div>
-                <strong className="text-gray-800">Q{index + 1}:</strong> {q.text}
-              </div>
-              <div className="flex gap-3">
-                <button className="text-blue-600 hover:text-blue-800">
-                  <Pencil size={18} />
-                </button>
-                <button className="text-red-600 hover:text-red-800">
-                  <Trash2 size={18} />
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+       
       ) : (
         <p className="text-gray-500">No questions found.</p>
       )}
