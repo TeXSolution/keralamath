@@ -11,6 +11,8 @@ const ChapterCard = ({ chapter }) => (
     </Link>
 );
 
+
+
 const ChapterList = () => {
     const { subjectId } = useParams();
     const navigate = useNavigate();
