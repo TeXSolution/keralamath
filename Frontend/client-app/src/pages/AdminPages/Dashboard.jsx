@@ -2,10 +2,7 @@ import React from 'react';
 import { Users, HelpCircle } from 'lucide-react';
 
 const Dashboard = () => {
-  const stats = [
-    { icon: Users, label: 'Total Users', value: '1,234' },
-    { icon: HelpCircle, label: 'Total Questions', value: '456' },
-  ];
+
 
   return (
     <div className="p-6">
