@@ -15,13 +15,17 @@ const Questions = () => {
       category: 'Technical',
       status: 'Draft',
     },
-   
+    {
+      id: 3,
+      title: 'How to reset password?',
+      category: 'Account',
+      status: 'Published',
+    },
   ];
 
   return (
     <div>
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-3xl font-bold">Questions Management</h1>
         <button className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors">
           Add Question
         </button>
