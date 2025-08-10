@@ -21,7 +21,8 @@ const Dashboard = () => {
                 <stat.icon size={32} className="text-white" />
               </div>
               <div>
-               
+                <p className="text-gray-400 text-lg">{stat.label}</p>
+                <p className="text-3xl font-bold">{stat.value}</p>
               </div>
             </div>
           </div>
