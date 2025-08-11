@@ -16,3 +16,12 @@ class ClassLevelListView(APIView):
         return Response(serializer.data)
     
 
+# SUBJECT LISTING VIEW
+class SubjectListAPIView(APIView):
+    def get(self, request, class_level_id=None):
+        if class_level_id:
+            subjects = Subject.objects.filter(class_level_id=class_level_id)
+        else:
+            subjects = Subject.objects.all()
+        serializer = SubjectSerializer(subjects, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
