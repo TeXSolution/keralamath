@@ -9,7 +9,18 @@ const Questions = () => {
       category: 'General',
       status: 'Published',
     },
-  
+    {
+      id: 2,
+      title: 'What are the system requirements?',
+      category: 'Technical',
+      status: 'Draft',
+    },
+    {
+      id: 3,
+      title: 'How to reset password?',
+      category: 'Account',
+      status: 'Published',
+    },
   ];
 
   return (
