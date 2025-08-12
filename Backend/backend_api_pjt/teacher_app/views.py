@@ -16,7 +16,6 @@ class ClassLevelListView(APIView):
         return Response(serializer.data)
     
 
-# SUBJECT LISTING VIEW
 class SubjectListAPIView(APIView):
     def get(self, request, class_level_id=None):
         if class_level_id:
