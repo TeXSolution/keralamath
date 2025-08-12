@@ -26,5 +26,6 @@ class SubjectListAPIView(APIView):
         serializer = SubjectSerializer(subjects, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
+    # post method
     def post(self,request):
         return Response('hello')
