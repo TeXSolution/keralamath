@@ -9,7 +9,8 @@ const QuestionListing = () => {
 
     const [chapters, setChapters] = useState([]);
     const [selectedChapterId, setSelectedChapterId] = useState(null);
-    
+    const [questions, setQuestions] = useState([]);
+    const [expandedIndex, setExpandedIndex] = useState(0);
 
 
     // STARTING CALL
