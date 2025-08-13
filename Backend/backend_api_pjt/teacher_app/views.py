@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from .serializers import *
 from admin_app.serializers import *
 from rest_framework import status
+from rest_framework import generics
 # Create your views here.
 
 # class list view
@@ -17,13 +18,22 @@ class ClassLevelListView(APIView):
     
 
 # SUBJECT LISTING VIEW
-class SubjectListAPIView(APIView):
-    def get(self, request, class_level_id=None):
-        if class_level_id:
-            subjects = Subject.objects.filter(class_level_id=class_level_id)
-        else:
-            subjects = Subject.objects.all()
-        serializer = SubjectSerializer(subjects, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+# class SubjectListAPIView(APIView):
+#     def get(self, request, class_level_id=None):
+#         if class_level_id:
+#             subjects = Subject.objects.filter(class_level_id=class_level_id)
+#         else:
+#             subjects = Subject.objects.all()
+#         serializer = SubjectSerializer(subjects, many=True)
+#         return Response(serializer.data, status=status.HTTP_200_OK)
     
    
+
+class SubjectListAPIView(generics.ListAPIView):
+    serializer_class = SubjectSerializer
+
+    def get_queryset(self):
+        class_level_id = self.kwargs.get('class_level_id')
+        if class_level_id:
+            return Subject.objects.filter(class_level_id=class_level_id)
+        return Subject.objects.all()
