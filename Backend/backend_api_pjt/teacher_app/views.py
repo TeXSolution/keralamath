@@ -28,7 +28,7 @@ class ClassLevelListView(APIView):
 #         return Response(serializer.data, status=status.HTTP_200_OK)
     
    
-
+# GENERIC VIEW
 class SubjectListAPIView(generics.ListAPIView):
     serializer_class = SubjectSerializer
 
