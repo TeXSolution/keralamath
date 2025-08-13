@@ -44,12 +44,14 @@ const Users = () => {
           Add User
         </button>
       </div>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="">
         <table className="w-full">
           <thead className="bg-gray-100">
             <tr>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">First Name</th>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Last Name</th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-900">Email</th>
+              <th className="px-6 py-3 text-right text-sm font-semibold text-gray-900">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
