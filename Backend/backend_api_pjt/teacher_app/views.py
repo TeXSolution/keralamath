@@ -9,6 +9,8 @@ from rest_framework import status
 from rest_framework import generics
 # Create your views here.
 
+
+
 # class list view
 class ClassLevelListView(APIView):
     def get(self, request):
