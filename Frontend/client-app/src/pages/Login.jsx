@@ -48,7 +48,12 @@ const Login = () => {
             <BookOpen className="w-12 h-12 text-blue-400" />
           </div>
           <h2 className="mt-6 text-3xl font-bold text-white">Welcome back</h2>
-
+          <p className="mt-2 text-sm text-gray-300">
+            Don't have an account?{' '}
+            <Link to="/signup" className="text-blue-400 hover:text-blue-500">
+              Sign up
+            </Link>
+          </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && <p className="text-red-500 text-sm">{error}</p>}
