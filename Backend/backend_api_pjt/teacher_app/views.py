@@ -35,7 +35,7 @@ class SubjectListAPIView(generics.ListAPIView):
 
 
 
-
+# CHAPTER LIST VIEW 
 class ChapterListAPIView(APIView):
     def get(self, request, subject_id=None):
         if subject_id:
