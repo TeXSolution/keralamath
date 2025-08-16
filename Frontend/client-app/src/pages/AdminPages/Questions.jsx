@@ -59,6 +59,7 @@ const Questions = () => {
                 </td>
                 <td className="px-6 py-4 text-right">
                   <button className="text-gray-500 hover:text-gray-700">
+                    <MoreVertical size={20} />
                   </button>
                 </td>
               </tr>
