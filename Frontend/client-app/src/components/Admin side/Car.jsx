@@ -13,7 +13,6 @@ const Car = () => {
         />
         <h2 className="text-xl font-bold mb-2">Tesla Model S</h2>
         <p className="text-gray-600 mb-4">
-          Electric performance car with sleek design and powerful features.
         </p>
         
       </div>
