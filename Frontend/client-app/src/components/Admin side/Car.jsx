@@ -4,7 +4,7 @@ const Car = () => {
 
 
   return (
-    <div className="">
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-lg rounded-2xl p-6 w-80">
         <img
           className="rounded-lg mb-4"
