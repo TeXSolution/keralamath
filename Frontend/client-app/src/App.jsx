@@ -54,7 +54,7 @@ function App() {
           <Route path="sub-list" element={<SubjectList />} />
           <Route path="sub-list2" element={<SubjectList2 />} />
           <Route path="sub-filter/:board/:classLevel" element={<SubjectListFiltered />} />
-          {/* <Route path="chapter/:chapterId/questions" element={<ChapterQuestions />} /> */}
+          <Route path="chapter/:chapterId/questions" element={<ChapterQuestions />} />
 
           <Route path="chapters-list/:subjectId/" element={<ChapterList />} />
           <Route path="question-view/:chapterId/" element={<QuestionViewer />} />
