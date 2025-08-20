@@ -81,6 +81,7 @@ const QuestionListing = () => {
                                     <h3 className="text-lg font-semibold">Q{expandedIndex + 1}:</h3>
                                     <p className="mt-2">{questions[expandedIndex].question_text}</p>
                                     <p className="mt-2 text-green-400 font-medium">
+                                        Answer: {questions[expandedIndex].answer_text}
                                     </p>
                                 </div>
                                 <div className="text-center">
