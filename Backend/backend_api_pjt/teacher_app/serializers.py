@@ -7,8 +7,10 @@ class ClassLevelSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
+# SUBJECT SERIALISER
 class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subject
         fields = ['id', 'class_level', 'name', 'description']
+
+
