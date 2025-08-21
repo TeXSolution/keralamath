@@ -8,6 +8,10 @@ from .serializers import *
 from admin_app.serializers import *
 from rest_framework import status
 from rest_framework import generics
+from rest_framework import serializers, viewsets, permissions
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 
@@ -46,4 +50,14 @@ class ChapterListAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
 
-    
+# CHAPTER  QUESTION VIEW
+class ChapterQuestionsAPIView(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, AdminOnlyPermission]  
+
+    # GET METHOD
+    def get(self, request, chapter_id):
+        chapter = get_object_or_404(Chapter, id=chapter_id)
+        questions = Question.objects.filter(chapter=chapter).order_by('order')
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
