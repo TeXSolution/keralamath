@@ -12,7 +12,13 @@ from rest_framework import serializers, viewsets, permissions
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from django.shortcuts import get_object_or_404
+from rest_framework.permissions import AllowAny,IsAdminUser
+
 # Create your views here.
+
+class AdminOnlyPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return request.user.is_authenticated and request.user.is_staff
 
 
 
