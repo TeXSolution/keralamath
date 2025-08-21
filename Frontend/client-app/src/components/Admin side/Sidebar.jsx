@@ -48,33 +48,7 @@ const Sidebar = () => {
                     <LayoutDashboard size={24} />
                     <h1 className="text-xl font-bold">Admin Panel</h1>
                 </div>
-                <nav>
-                    {menuItems.map((item) => (
-                        item.label === 'Logout' ? (
-                            <button
-                                key={item.label}
-                                onClick={item.onClick}
-                                className="flex items-center gap-3 px-4 py-3 rounded-lg text-red-500 hover:bg-red-700 hover:text-white transition-colors w-full text-left"
-                            >
-                                <item.icon size={20} />
-                                <span>{item.label}</span>
-                            </button>
-                        ) : (
-                            <NavLink
-                                key={item.path}
-                                to={item.path}
-                                className={({ isActive }) =>
-                                    `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${isActive ? 'bg-white text-black' : 'text-gray-300 hover:bg-gray-800'
-                                    }`
-                                }
-                                onClick={() => setIsOpen(false)}
-                            >
-                                <item.icon size={20} />
-                                <span>{item.label}</span>
-                            </NavLink>
-                        )
-                    ))}
-                </nav>
+                
             </div>
         </div>
     );
