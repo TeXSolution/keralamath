@@ -5,11 +5,7 @@ import { BookOpen } from 'lucide-react';
 const Navbar = () => {
     const navigate = useNavigate()
     const isLoggedIn = !!localStorage.getItem('access_token');
-    const handleLogout = () => {
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
-        navigate('/');
-    };
+  
     return (
         <nav className="container mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
