@@ -31,7 +31,6 @@ const Sidebar = () => {
             }
         },
     ];
-
     return (
         <div>
             <button
