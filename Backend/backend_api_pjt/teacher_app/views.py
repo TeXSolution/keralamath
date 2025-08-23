@@ -2,17 +2,7 @@ from django.shortcuts import render
 from admin_app.models import *
 
 
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from .serializers import *
-from admin_app.serializers import *
-from rest_framework import status
-from rest_framework import generics
-from rest_framework import serializers, viewsets, permissions
-from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.authentication import JWTAuthentication
-from django.shortcuts import get_object_or_404
-from rest_framework.permissions import AllowAny,IsAdminUser
+
 
 # Create your views here.
 
