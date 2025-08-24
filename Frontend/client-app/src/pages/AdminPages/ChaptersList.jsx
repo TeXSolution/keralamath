@@ -4,10 +4,7 @@ import axiosInstance from '../../axios/axiosInstance';
 
 const ChapterCard = ({ chapter }) => (
     <Link to={`/admin-dashboard/question-view/${chapter.id}/`}>
-        <div className="p-4 bg-gray-800 rounded-lg shadow-md mb-4 hover:bg-gray-700 cursor-pointer">
-            <h3 className="text-xl font-bold text-white mb-2">{chapter.name}</h3>
-            <p className="text-gray-300">{chapter.description}</p>
-        </div>
+        
     </Link>
 );
 
