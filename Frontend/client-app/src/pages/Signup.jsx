@@ -16,7 +16,36 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate('')
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
+    setLoading(true);
+    setError('');
+
+    const userData = {
+      user: {
+        username: name,
+        password: password,
+      },
+      first_name: firstName,
+      last_name: lastName,
+      date_of_birth: dob,
+      address: address,
+      phone_number: phoneNumber,
+      email: email,
+    };
+
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/register-student/', userData);
+      setLoading(false);
+      alert('Account created successfully');
+      navigate('/')
+
+    } catch (error) {
+      setLoading(false);
+      setError('Failed to create an account. Please try again.');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
