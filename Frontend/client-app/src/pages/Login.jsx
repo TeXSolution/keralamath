@@ -47,7 +47,7 @@ const Login = () => {
           <div className="flex justify-center">
             <BookOpen className="w-12 h-12 text-blue-400" />
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-white">Welcome back</h2>
+          <h2 className="mt-6 text-3xl font-bold text-white">Welcome BACK</h2>
           <p className="mt-2 text-sm text-gray-300">
             Don't have an account?{' '}
             <Link to="/signup" className="text-blue-400 hover:text-blue-500">

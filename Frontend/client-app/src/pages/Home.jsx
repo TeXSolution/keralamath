@@ -45,7 +45,12 @@ const Landing = () => {
                         >
                             Kerala Syllabus
                         </Link>
-                        
+                        <Link
+                            to="/plusone/cbse"
+                            className="px-6 py-2 text-lg font-medium text-white bg-green-600 rounded-lg hover:bg-green-700"
+                        >
+                            CBSE
+                        </Link>
                     </div>
                 </div>
 
