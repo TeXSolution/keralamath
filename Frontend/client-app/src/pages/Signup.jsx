@@ -35,7 +35,16 @@ const Signup = () => {
       email: email,
     };
 
-  
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/register-student/', userData);
+      setLoading(false);
+      alert('Account created successfully');
+      navigate('/')
+
+    } catch (error) {
+      setLoading(false);
+      setError('Failed to create an account. Please try again.');
+    }
   };
 
   return (

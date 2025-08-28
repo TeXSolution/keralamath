@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar';
 
 const Landing = () => {
     const navigate = useNavigate();
-    const isLoggedIn = !!localStorage.getItem('access_token');
     const handleLogout = () => {
         localStorage.removeItem('access_token');
         localStorage.removeItem('refresh_token');
