@@ -71,10 +71,4 @@ class ChapterQuestionsAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-    # post method view
-    def post(self, request, chapter_id):
-        chapter = get_object_or_404(Chapter, id=chapter_id)
-        questions = Question.objects.filter(chapter=chapter).order_by('order')
-        serializer = QuestionSerializer(questions, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
+  
