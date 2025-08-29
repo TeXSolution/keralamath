@@ -6,11 +6,10 @@ const SubjectList = () => {
     const navigate = useNavigate();
 
     const handleBoardClick = (board) => {
-        setSelectedBoard(board); // 'cbse' or 'kerala'
+        setSelectedBoard(board);  
     };
 
     const handleClassClick = (className) => {
-        // Navigate to the new route with selected board and class
         navigate(`/admin-dashboard/sub-filter/${selectedBoard}/${className}`);
     };
 
