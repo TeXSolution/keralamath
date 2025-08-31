@@ -13,9 +13,7 @@ const SubjectCard = ({ subject }) => (
 );
 
 const SubjectList = () => {
-    const [subjects, setSubjects] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
+  
 
     useEffect(() => {
         const fetchSubjects = async () => {

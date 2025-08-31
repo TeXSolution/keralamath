@@ -6,7 +6,7 @@ const SubjectList = () => {
     const navigate = useNavigate();
 
     const handleBoardClick = (board) => {
-        setSelectedBoard(board);  
+        setSelectedBoard(board); // 'cbse' or 'kerala'
     };
 
     const handleClassClick = (className) => {
