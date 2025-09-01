@@ -26,7 +26,6 @@ const SubjectList = () => {
                 setLoading(false);
             }
         };
-        fetchSubjects();
     }, []);
 
     const handleAddSubject = () => {
