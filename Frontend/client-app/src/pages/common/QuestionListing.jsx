@@ -46,11 +46,11 @@ const QuestionListing = () => {
         }
     };
 
-    const handleNext = () => {
-        if (expandedIndex < questions.length - 1) {
-            setExpandedIndex(expandedIndex + 1);
-        }
-    };
+    // const handleNext = () => {
+    //     if (expandedIndex < questions.length - 1) {
+    //         setExpandedIndex(expandedIndex + 1);
+    //     }
+    // };
 
     return (
         <div className="min-h-screen bg-black text-white">
