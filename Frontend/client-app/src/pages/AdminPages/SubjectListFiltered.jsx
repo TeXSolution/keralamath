@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../axios/axiosInstance';
 import { BookOpen, ChevronLeft, Layers, FileText } from 'lucide-react';
 
-// Capitalize first letter of string
 const capitalizeFirstLetter = (text) => {
     return text.charAt(0).toUpperCase() + text.slice(1);
 };
@@ -50,7 +49,9 @@ const SubjectCard = ({ subject, onChapterClick }) => {
 
 const SubjectListFiltered = () => {
     const { board, classLevel } = useParams();
- 
+    const [subjects, setSubjects] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchSubjects = async () => {
