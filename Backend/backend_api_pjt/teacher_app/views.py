@@ -14,8 +14,6 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from django.shortcuts import get_object_or_404
 from rest_framework.permissions import AllowAny,IsAdminUser
 
-# Create your views here.
-
 
 # PERMISTION
 class AdminOnlyPermission(permissions.BasePermission):
@@ -37,14 +35,12 @@ class ClassLevelListView(APIView):
 class SubjectListAPIView(generics.ListAPIView):
     serializer_class = SubjectSerializer
 
+    # GET QUERY
     def get_queryset(self):
         class_level_id = self.kwargs.get('class_level_id')
         if class_level_id:
             return Subject.objects.filter(class_level_id=class_level_id)
         return Subject.objects.all()
-
-
-
 
 
 # CHAPTER LIST VIEW 
