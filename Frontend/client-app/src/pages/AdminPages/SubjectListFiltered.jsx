@@ -50,9 +50,7 @@ const SubjectCard = ({ subject, onChapterClick }) => {
 
 const SubjectListFiltered = () => {
     const { board, classLevel } = useParams();
-    const [subjects, setSubjects] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const navigate = useNavigate();
+ 
 
     useEffect(() => {
         const fetchSubjects = async () => {
