@@ -11,8 +11,6 @@ const ChapterCard = ({ chapter }) => (
     </Link>
 );
 
-
-
 const ChapterList = () => {
     const { subjectId } = useParams();
     const navigate = useNavigate();
@@ -43,7 +41,7 @@ const ChapterList = () => {
 
         fetchChapters();
         fetchSubjectName();
-    }, [subjectId]);
+    });
 
     const handleAddChapter = () => {
         navigate(`/admin-dashboard/add-chapter/${subjectId}/`);
