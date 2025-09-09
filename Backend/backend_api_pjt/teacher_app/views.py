@@ -35,12 +35,10 @@ class ClassLevelListView(APIView):
 class SubjectListAPIView(generics.ListAPIView):
     serializer_class = SubjectSerializer
 
-    # GET QUERY
     def get_queryset(self):
         class_level_id = self.kwargs.get('class_level_id')
         if class_level_id:
-            return Subject.objects.filter(class_level_id=class_level_id)
-        return Subject.objects.all()
+            return Subject.objects.all()
 
 
 # CHAPTER LIST VIEW 
@@ -58,9 +56,12 @@ class ChapterQuestionsAPIView(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, AdminOnlyPermission]  
 
-
-
-
+    # GET METHOD
+    def get(self, request, chapter_id):
+        chapter = get_object_or_404(Chapter, id=chapter_id)
+        questions = Question.objects.filter(chapter=chapter).order_by('order')
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     # post method view
     def post(self, request, chapter_id):
@@ -68,7 +69,5 @@ class ChapterQuestionsAPIView(APIView):
         questions = Question.objects.filter(chapter=chapter).order_by('order')
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
-
 
 
