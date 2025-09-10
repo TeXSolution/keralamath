@@ -30,18 +30,11 @@ const ChapterList = () => {
             }
         };
 
-        const fetchSubjectName = async () => {
-            try {
-                const subjectRes = await axiosInstance.get(`/subjects/${subjectId}/`);
-                setSubjectName(subjectRes.data.name);
-            } catch (error) {
-                console.error('Error fetching subject name:', error);
-            }
-        };
+      
 
         fetchChapters();
         fetchSubjectName();
-    });
+    }, [subjectId]);
 
     const handleAddChapter = () => {
         navigate(`/admin-dashboard/add-chapter/${subjectId}/`);
