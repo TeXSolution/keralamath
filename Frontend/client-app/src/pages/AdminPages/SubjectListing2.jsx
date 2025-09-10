@@ -9,7 +9,9 @@ const SubjectList = () => {
         setSelectedBoard(board); // 'cbse' or 'kerala'
     };
 
-  
+    const handleClassClick = (className) => {
+        navigate(`/admin-dashboard/sub-filter/${selectedBoard}/${className}`);
+    };
 
     const classLevels = ['plusone', 'plustwo'];
 
