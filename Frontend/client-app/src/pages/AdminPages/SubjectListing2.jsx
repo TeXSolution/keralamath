@@ -15,6 +15,7 @@ const SubjectList = () => {
 
     const classLevels = ['plusone', 'plustwo'];
 
+
     return (
         <div className="p-8 text-white min-h-screen flex items-center justify-center">
             <div className="bg-gray-900 rounded-2xl shadow-xl p-6 w-full max-w-2xl">
