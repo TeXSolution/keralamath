@@ -9,12 +9,9 @@ const SubjectList = () => {
         setSelectedBoard(board); // 'cbse' or 'kerala'
     };
 
-    const handleClassClick = (className) => {
-        navigate(`/admin-dashboard/sub-filter/${selectedBoard}/${className}`);
-    };
+  
 
     const classLevels = ['plusone', 'plustwo'];
-
 
     return (
         <div className="p-8 text-white min-h-screen flex items-center justify-center">

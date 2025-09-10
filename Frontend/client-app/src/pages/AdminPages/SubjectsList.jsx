@@ -2,20 +2,18 @@ import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../axios/axiosInstance';
 import { Link, useNavigate } from 'react-router-dom';
 
-// const SubjectCard = ({ subject }) => (
-//     <Link to={`/admin-dashboard/chapters-list/${subject.id}/`}>
-//         <div className="p-4 bg-gray-800 rounded-lg shadow-md mb-4 hover:bg-gray-700 cursor-pointer">
-//             <h3 className="text-xl font-bold text-white mb-1">{subject.name}</h3>
-//             <p className="text-gray-400 text-sm mb-1">Class Level: {subject.class_level_name}</p>
-//             <p className="text-gray-300">{subject.description}</p>
-//         </div>
-//     </Link>
-// );
+const SubjectCard = ({ subject }) => (
+    <Link to={`/admin-dashboard/chapters-list/${subject.id}/`}>
+        <div className="p-4 bg-gray-800 rounded-lg shadow-md mb-4 hover:bg-gray-700 cursor-pointer">
+            <h3 className="text-xl font-bold text-white mb-1">{subject.name}</h3>
+            <p className="text-gray-400 text-sm mb-1">Class Level: {subject.class_level_name}</p>
+            <p className="text-gray-300">{subject.description}</p>
+        </div>
+    </Link>
+);
 
 const SubjectList = () => {
-  
-
-
+   
 
     useEffect(() => {
         const fetchSubjects = async () => {
