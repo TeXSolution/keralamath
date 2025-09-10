@@ -5,18 +5,18 @@ const Users = () => {
   const [users, setUsers] = useState([]);
 
   // Fetch users from the backend
-  // useEffect(() => {
-  //   const fetchUsers = async () => {
-  //     try {
-  //       const response = await axiosInstance.get('students/');
-  //       setUsers(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching users:', error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axiosInstance.get('students/');
+        setUsers(response.data);
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    };
 
-  //   fetchUsers();
-  // }, []);
+    fetchUsers();
+  }, []);
 
   
   // Handle Block/Unblock Action
