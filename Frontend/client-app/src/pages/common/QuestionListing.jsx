@@ -7,8 +7,6 @@ const QuestionListing = () => {
     const location = useLocation();
     const { subject } = location.state || {};
 
-    const [chapters, setChapters] = useState([]);
-    const [selectedChapterId, setSelectedChapterId] = useState(null);
    
 
     // STARTING CALL
