@@ -28,11 +28,7 @@ const Login = () => {
       localStorage.setItem('refresh_token', refresh);
       localStorage.setItem('role', role);
 
-      if (role === 'superadmin') {
-        navigate('/admin-dashboard/dash');   
-      } else {
-        navigate('/');  
-      }
+     
 
        
     } catch (err) {
