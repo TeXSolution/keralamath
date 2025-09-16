@@ -29,18 +29,7 @@ const QuestionListing = () => {
         fetchChapters();
     }, [subject]);
 
-    const handleChapterSelect = async (chapterId) => {
-        setSelectedChapterId(chapterId);
-        try {
-            const res = await axiosInstance.get(`/questions/user`, {
-                params: { chapter_id: chapterId }
-            });
-            setQuestions(res.data);
-            setExpandedIndex(0);  
-        } catch (err) {
-            console.error('Error fetching questions:', err);
-        }
-    };
+   
 
     const handleNext = () => {
         if (expandedIndex < questions.length - 1) {
