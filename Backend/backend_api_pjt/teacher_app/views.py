@@ -16,18 +16,18 @@ from rest_framework.permissions import AllowAny,IsAdminUser
 
 
 # PERMISTION
-# class AdminOnlyPermission(permissions.BasePermission):
-#     def has_permission(self, request, view):
-#         return request.user.is_authenticated and request.user.is_staff
+class AdminOnlyPermission(permissions.BasePermission):
+    def has_permission(self, request, view):
+        return request.user.is_authenticated and request.user.is_staff
 
 
 
 # class list view
-class ClassLevelListView(APIView):
-    def get(self, request):
-        class_levels = ClassLevel.objects.all()
-        serializer = ClassLevelSerializer(class_levels, many=True)
-        return Response(serializer.data)
+# class ClassLevelListView(APIView):
+#     def get(self, request):
+#         class_levels = ClassLevel.objects.all()
+#         serializer = ClassLevelSerializer(class_levels, many=True)
+#         return Response(serializer.data)
     
 
 
