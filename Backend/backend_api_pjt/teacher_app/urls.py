@@ -2,7 +2,7 @@ from django.urls import path,include
 from .views import *
 
 urlpatterns = [
-    path('api/subjects/listing/', SubjectListAPIView.as_view(), name='one-OVIEW'),
+    path('api/subjects/listing/', SubjectListAPIView.as_view(), name='one-VIEW'),
 
     path('chapters/listing', ChapterListAPIView.as_view(), name='chapter-LIST'),  
 
