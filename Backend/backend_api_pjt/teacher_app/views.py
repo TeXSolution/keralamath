@@ -22,9 +22,6 @@ class AdminOnlyPermission(permissions.BasePermission):
 
 
 
- 
-
-
 # GENERIC VIEW
 class SubjectListAPIView(generics.ListAPIView):
     serializer_class = SubjectSerializer
