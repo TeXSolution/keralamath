@@ -22,13 +22,7 @@ class AdminOnlyPermission(permissions.BasePermission):
 
 
 
-# class list view
-# class ClassLevelListView(APIView):
-#     def get(self, request):
-#         class_levels = ClassLevel.objects.all()
-#         serializer = ClassLevelSerializer(class_levels, many=True)
-#         return Response(serializer.data)
-    
+ 
 
 
 # GENERIC VIEW
