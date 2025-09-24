@@ -30,6 +30,8 @@ class SubjectListAPIView(generics.ListAPIView):
         if class_level_id:
             return Subject.objects.filter(class_level_id=class_level_id)
         return Subject.objects.all()
+    
+    
 
 # CHAPTER LIST VIEW 
 class ChapterListAPIView(APIView):
