@@ -20,8 +20,6 @@ class AdminOnlyPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.is_staff
 
-
-
 # GENERIC VIEW
 class SubjectListAPIView(generics.ListAPIView):
     serializer_class = SubjectSerializer
@@ -55,10 +53,4 @@ class ChapterQuestionsAPIView(APIView):
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    # post method view
-    def post(self, request, chapter_id):
-        chapter = get_object_or_404(Chapter, id=chapter_id)
-        questions = Question.objects.filter(chapter=chapter).order_by('order')
-        serializer = QuestionSerializer(questions, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
-
+ 
