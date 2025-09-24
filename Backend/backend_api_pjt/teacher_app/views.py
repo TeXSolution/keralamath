@@ -31,6 +31,15 @@ class SubjectListAPIView(generics.ListAPIView):
             return Subject.objects.filter(class_level_id=class_level_id)
         return Subject.objects.all()
 
+# CHAPTER LIST VIEW 
+class ChapterListAPIView(APIView):
+    def get(self, request, subject_id=None):
+        if subject_id:
+            chapters = Chapter.objects.filter(subject_id=subject_id)
+        else:
+            chapters = Chapter.objects.all()
+        serializer = ChapterSerializer(chapters, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
 # CHAPTER  QUESTION VIEW
 class ChapterQuestionsAPIView(APIView):
