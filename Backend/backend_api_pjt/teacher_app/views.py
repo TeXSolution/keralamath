@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from admin_app.models import *
-
+from rest_framework.decorators import api_view
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -62,3 +62,13 @@ class ChapterQuestionsAPIView(APIView):
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+
+
+@api_view(['GET'])
+def classlevel_list(request):
+    """
+    API endpoint to list all class levels
+    """
+    class_levels = ClassLevel.objects.all().values("id", "level", "syllabus")
+    return Response(class_levels)
