@@ -72,3 +72,14 @@ def classlevel_list(request):
     """
     class_levels = ClassLevel.objects.all().values("id", "level", "syllabus")
     return Response(class_levels)
+
+
+class ClassLevelListAPIView(APIView):
+    """
+    API View to list all ClassLevel objects
+    """
+
+    def get(self, request):
+        class_levels = ClassLevel.objects.all()
+        serializer = ClassLevelSerializer(class_levels, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
