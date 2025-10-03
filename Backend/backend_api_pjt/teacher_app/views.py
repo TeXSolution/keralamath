@@ -65,14 +65,6 @@ class ChapterQuestionsAPIView(APIView):
 
 
 
-@api_view(['GET'])
-def classlevel_list(request):
-    """
-    API endpoint to list all class levels
-    """
-    class_levels = ClassLevel.objects.all().values("id", "level", "syllabus")
-    return Response(class_levels)
-
 
 class ClassLevelListAPIView(APIView):
     """
