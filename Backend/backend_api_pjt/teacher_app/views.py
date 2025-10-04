@@ -63,9 +63,6 @@ class ChapterQuestionsAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-
-
-
 class ClassLevelListAPIView(APIView):
     """
     API View to list all ClassLevel objects
