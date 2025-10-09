@@ -63,6 +63,21 @@ class ChapterQuestionsAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+class QuestionListByChapter(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    def get(self, request):
+        print('question listing is working')
+        chapter_id = request.query_params.get('chapter_id')
+
+        if not chapter_id:
+            return Response({'error': 'chapter_id is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        chapter = get_object_or_404(Chapter, id=chapter_id)
+
+        questions = chapter.questions.all().order_by('order')
+        serializer = QuestionSerializer(questions, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
                         
                         
