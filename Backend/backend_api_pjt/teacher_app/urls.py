@@ -8,7 +8,7 @@ urlpatterns = [
 
 
     # CHAPTER LIST URL 
-    path('chapters/listing', ChapterListAPIView.as_view(), name='chapter-list'),  
+    path('chapters/listing', ChapterListAPIView.as_view(), name='chapter-LIST'),  
 
 
 
