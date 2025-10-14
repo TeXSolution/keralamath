@@ -3,17 +3,11 @@ from .views import *
 
 urlpatterns = [
 
+    # SUBJECT LISTING
     path('api/subjects/listing/', SubjectListAPIView.as_view(), name='one-View'),
-
-
 
     # CHAPTER LIST URL 
     path('chapters/listing', ChapterListAPIView.as_view(), name='chapter-LIST'),  
-
-
-
-
-
 
 ]
 
