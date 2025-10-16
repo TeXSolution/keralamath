@@ -4,10 +4,10 @@ from .views import *
 urlpatterns = [
 
     # SUBJECT LISTING
-    path('api/subjects/listing/', SubjectListAPIView.as_view(), name='one-View'),
+    path('api/subjects/listing/', SubjectListAPIView.as_view(), name='one-view'),
 
     # CHAPTER LIST URL 
-    path('chapters/listing', ChapterListAPIView.as_view(), name='chapter-LIST'),  
+    path('chapters/listing', ChapterListAPIView.as_view(), name='chapter-list'),  
 
 ]
 
