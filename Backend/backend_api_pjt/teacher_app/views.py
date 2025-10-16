@@ -20,16 +20,16 @@ class AdminOnlyPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.is_staff
 
-# GENERIC VIEW
-class SubjectListAPIView(generics.ListAPIView):
-    serializer_class = SubjectSerializer
+# # GENERIC VIEW
+# class SubjectListAPIView(generics.ListAPIView):
+#     serializer_class = SubjectSerializer
 
-    # GET QUERY
-    def get_queryset(self):
-        class_level_id = self.kwargs.get('class_level_id')
-        if class_level_id:
-            return Subject.objects.filter(class_level_id=class_level_id)
-        return Subject.objects.all()
+#     # GET QUERY
+#     def get_queryset(self):
+#         class_level_id = self.kwargs.get('class_level_id')
+#         if class_level_id:
+#             return Subject.objects.filter(class_level_id=class_level_id)
+#         return Subject.objects.all()
     
     
 
