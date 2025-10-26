@@ -20,7 +20,6 @@ class AdminOnlyPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.is_staff
 
-
 # CHAPTER LIST VIEW 
 class ChapterListAPIView(APIView):
     def get(self, request, subject_id=None):
@@ -49,7 +48,6 @@ class ChapterQuestionsAPIView(APIView):
         questions = Question.objects.filter(chapter=chapter).order_by('order')
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
 
 class QuestionListByChapter(APIView):
     authentication_classes = [JWTAuthentication]
