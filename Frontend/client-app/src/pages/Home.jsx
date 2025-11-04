@@ -8,7 +8,6 @@ const Landing = () => {
     const isLoggedIn = !!localStorage.getItem('access_token');
     const handleLogout = () => {
         localStorage.removeItem('access_token');
-        localStorage.removeItem('refresh_token');
         navigate('/');
     };
 
@@ -24,7 +23,8 @@ const Landing = () => {
                     Join thousands of students achieving their goals through our innovative learning platform.
                 </p>
             </div>
-
+            
+            {/* Plus One and Plus Two Classes - Centered */}
             <div className="container mx-auto px-6 py-20 flex justify-center space-x-12">
                 {/* Plus One Class Card */}
                 <div className="text-center">
