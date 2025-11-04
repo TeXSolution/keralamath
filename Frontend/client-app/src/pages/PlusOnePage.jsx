@@ -4,7 +4,9 @@ import { ChevronDown } from 'lucide-react';
 const PlusOnePage = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
 
     return (
         <div className="min-h-screen bg-gray-900 text-white">

@@ -23,11 +23,8 @@ const Landing = () => {
                 <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
                     Join thousands of students achieving their goals through our innovative learning platform.
                 </p>
-             
             </div>
 
-
-            {/* Plus One and Plus Two Classes - Centered */}
             <div className="container mx-auto px-6 py-20 flex justify-center space-x-12">
                 {/* Plus One Class Card */}
                 <div className="text-center">
@@ -75,9 +72,6 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-
-
-
 
             {/* Other Features - Bottom */}
             <div className="container mx-auto px-6 py-20" id="features">
