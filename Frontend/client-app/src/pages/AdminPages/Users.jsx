@@ -19,22 +19,8 @@ const Users = () => {
   }, []);
 
   
-  // Handle Block/Unblock Action
-  const handleStatusChange = async (userId, currentStatus) => {
-    const newStatus = currentStatus === 'block' ? 'unblock' : 'block';
-    try {
-      // Call the backend API to update the status (if needed)
-      await axiosInstance.patch(`students/${userId}/`, { status: newStatus });
 
-      setUsers((prevUsers) =>
-        prevUsers.map((user) =>
-          user.id === userId ? { ...user, status: newStatus } : user
-        )
-      );
-    } catch (error) {
-      console.error(`Error ${newStatus}ing user:`, error);
-    }
-  };
+
 
   return (
     <div className="p-6">
