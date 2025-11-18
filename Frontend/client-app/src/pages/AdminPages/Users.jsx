@@ -4,7 +4,6 @@ import axiosInstance from '../../axios/axiosInstance';
 const Users = () => {
   const [users, setUsers] = useState([]);
 
-  // Fetch users from the backend
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -14,7 +13,6 @@ const Users = () => {
         console.error('Error fetching users:', error);
       }
     };
-
     fetchUsers();
   }, []);
 
