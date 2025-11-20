@@ -4,18 +4,26 @@ import axiosInstance from '../../axios/axiosInstance';
 const Users = () => {
   const [users, setUsers] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await axiosInstance.get('students/');
-        setUsers(response.data);
+        
+
+
+
+
+
+
+
+
+        
       } catch (error) {
         console.error('Error fetching users:', error);
       }
     };
     fetchUsers();
   }, []);
-
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-8">
