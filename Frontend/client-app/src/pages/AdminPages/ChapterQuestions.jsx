@@ -8,20 +8,7 @@ const ChapterQuestions = () => {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const res = await axiosInstance.get(`/questions/${chapterId}/`);
-        setQuestions(res.data || []);  
-        setLoading(false);
-      } catch (err) {
-        console.error('Error fetching questions', err);
-        setLoading(false);
-      }
-    };
- 
-    fetchQuestions();
-  }, [chapterId]);
+  
 
   return (
     <div className="p-6 bg-white shadow-md rounded-md">
