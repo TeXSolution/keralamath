@@ -22,6 +22,8 @@ const ChapterQuestions = () => {
     fetchQuestions();
   }, [chapterId]);
 
+
+  
   return (
     <div className="p-6 bg-white shadow-md rounded-md">
       <div className="flex items-center justify-between mb-4">
