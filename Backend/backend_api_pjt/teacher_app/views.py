@@ -20,6 +20,9 @@ class AdminOnlyPermission(permissions.BasePermission):
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.is_staff
 
+
+
+
 # CHAPTER LIST VIEW 
 class ChapterListAPIView(APIView):
     def get(self, request, subject_id=None):
