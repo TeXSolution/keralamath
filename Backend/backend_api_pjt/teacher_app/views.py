@@ -22,7 +22,6 @@ class AdminOnlyPermission(permissions.BasePermission):
 
 
 
-
 # CHAPTER LIST VIEW 
 class ChapterListAPIView(APIView):
     def get(self, request, subject_id=None):
@@ -68,5 +67,4 @@ class QuestionListByChapter(APIView):
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-                        
-                       
+                                           
