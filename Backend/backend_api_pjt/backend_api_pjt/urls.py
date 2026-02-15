@@ -8,3 +8,5 @@ urlpatterns = [
     path('', include('user_app.urls')),
     path('', include('teachers_app.urls')),
 ]
+
+
