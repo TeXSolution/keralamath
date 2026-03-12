@@ -51,6 +51,7 @@ class ChapterQuestionsAPIView(APIView):
         serializer = QuestionSerializer(questions, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+# questionlist 
 class QuestionListByChapter(APIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated]
@@ -68,13 +69,6 @@ class QuestionListByChapter(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
                                            
-
-
-
-
-
-
-
 
 
                                     
